@@ -25,6 +25,7 @@ h1, h2{
 
 /*Main web page structure*/
 .main-box{
+    text-align: center;
     background-color: #10be00;
     height: 50%;
     width: 50%;
