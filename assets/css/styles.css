@@ -9,7 +9,7 @@
 
 body{
     font-size: 16;
-    color: #0066ff;
+    background-color: #0066ff;
     font-family: Lato, 'sans-serif';
 }
 
@@ -17,8 +17,42 @@ body{
 h1, h2{
     font-family: Orbitron, 'sans-serif';
     text-transform: uppercase;
-    font-weight: 175;
-    letter-spacing: 3px;
+    font-weight: 50;
+    letter-spacing: 1px;
     color: #202020
 }
 
+
+/*Main web page structure*/
+.main-box{
+    background-color: #10be00;
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+.sign-up{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.form-input{
+    width: 40%;
+    height: 20px;
+    margin: 10px 5px 10px 30px;
+    border: 1px solid #111111;
+    border-radius: 5px;
+}
+
+label{
+    padding-left: 5px;
+}
