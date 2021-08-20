@@ -26,7 +26,6 @@ h1, h2{
 /*Main web page structure*/
 .main-box{
     text-align: center;
-    background-color: #10be00;
     height: 50%;
     width: 50%;
     position: absolute;
@@ -34,6 +33,10 @@ h1, h2{
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
+}
+
+.main-box-color{
+    background-color: #10be00;
 }
 
 .sign-up{
