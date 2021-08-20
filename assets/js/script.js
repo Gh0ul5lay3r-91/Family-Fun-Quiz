@@ -11,6 +11,16 @@ function formCheck(event){
         console.log("This is working");
     }else{
         form.submit();
-        playGame();
     }
 }
+
+function welcomeName(){
+    let userName = document.getElementById('name');
+    let welcomeBox = document.getElementById('welcome-box');
+    let welcomeMessage = `
+    <h2>Welcome to the quiz ${userName}</h2>
+    `;
+
+    welcomeBox.innerHTML = welcomeMessage;
+}
+
