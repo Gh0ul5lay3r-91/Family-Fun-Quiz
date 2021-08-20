@@ -57,3 +57,21 @@ h1, h2{
 label{
     padding-left: 5px;
 }
+
+.play-button{
+    text-decoration: none;
+    background-color: #ff0000;
+    font-size: large;
+    color: #111111;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.play-button:hover{
+    background-color: #ffffff;
+    color: #ff0000;
+}
+
+.label-div{
+    text-align: left;
+}
