@@ -1,4 +1,4 @@
-let form = document.getElementById('signup-form');
+let form = document.getElementById('name-form');
 form.addEventListener('submit', formCheck);
 
 function formCheck(event){
@@ -15,12 +15,11 @@ function formCheck(event){
 }
 
 function welcomeName(){
-    let userName = document.getElementById('form-input');
-    let welcomeBox = document.getElementById('welcome-box');
+    let userName = document.getElementById('name');
+    let welcomeBox = document.getElementById('game-box');
     let welcomeMessage = `
     <h2>Welcome to the quiz ${userName}</h2>
     `;
     
     welcomeBox.innerHTML = welcomeMessage;
 }
-
