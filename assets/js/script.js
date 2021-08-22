@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
             </div>
             <!--Button to submit your details-->
             <div>
-                <button class="play-button" type="submit">Lets Play!</button>
+                <button class="play-button" type="submit">Enter</button>
                 <button class="play-button" type="reset">Reset</button>
             </div>
     `;
@@ -37,6 +37,7 @@ function playGame(){
     let welcomeBox = document.getElementById('game-box');
     let welcomeMessage = `
     <h2>Welcome to the quiz ${userName}</h2>
+    <a href="quiz.html"><button class="play-button" type="submit">Lets Go!</button></a>
     `;
     
     welcomeBox.innerHTML = welcomeMessage;
