@@ -41,5 +41,6 @@ function playGame(){
     `;
     
     welcomeBox.innerHTML = welcomeMessage;
-    console.log(userName);
+
+    localStorage.setItem('name', userName);
 }
