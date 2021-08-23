@@ -41,7 +41,6 @@ h1, h2{
 }
 
 #game-box{
-    position: absolute;
     text-align: center;
     height: 25%;
     width: 100%;
@@ -81,9 +80,6 @@ label{
 
 /*Styles for spans containing incorrect and correct scores on the quiz page*/
 #result-box{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     height: 12.5%;
     width: 100%;
     text-align: center;
@@ -95,12 +91,10 @@ label{
 
 #submit-box{
     height: 12.5%;
-    position: absolute;
     width: 100%;
     
 }
 
 #counter-box{
-    position: absolute;
     width: 100%;
 }
