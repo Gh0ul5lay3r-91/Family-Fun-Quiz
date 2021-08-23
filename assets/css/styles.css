@@ -42,11 +42,10 @@ h1, h2{
 
 #game-box{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
-    height: 25%
+    height: 25%;
+    width: 100%;
+    border: 1px solid black;
 }
 
 /*Styles for form on sign up page and clickable buttons*/
@@ -86,6 +85,8 @@ label{
     flex-direction: row;
     justify-content: space-around;
     height: 12.5%;
+    width: 100%;
+    text-align: center;
 }
 
 #result-box p{
@@ -94,13 +95,12 @@ label{
 
 #submit-box{
     height: 12.5%;
-    bottom: 0;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    
 }
 
 #counter-box{
     position: absolute;
+    width: 100%;
 }
