@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function(){
                 <button class="play-button" type="reset">Reset</button>
             </div>
     `;
-    let gameBox = document.getElementById('game-box');
+    let formBox = document.getElementById('form-box');
 
-    gameBox.innerHTML = html;
+    formBox.innerHTML = html;
 
     let form = document.getElementById('name-form');
     form.addEventListener('submit', formCheck);
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function playGame(){
     let userName = document.getElementById('name').value;
-    let welcomeBox = document.getElementById('game-box');
+    let welcomeBox = document.getElementById('form-box');
     let welcomeMessage = `
     <h2>Welcome to the quiz ${userName}</h2>
     <a href="quiz.html"><button class="play-button" type="submit">Lets Go!</button></a>
