@@ -70,7 +70,10 @@ function buildQuestion(){
 
     questionCountBox.innerText = questionCount;
 
-    if(questionCount <= maxAmount){
+    if(questionCount >= maxAmount){
+        //showResults();
+        //localStorage.setItem('High Score', highScore);
+    }else{
         const numberOfQuestions = Math.floor(Math.random() * gameQuestions.length);
         currentQues = gameQuestions[numberOfQuestions];
         let questionHtml = `
@@ -97,13 +100,18 @@ function buildQuestion(){
             <input type="radio" id="option" value="option4"/>
         </li>
         `;
-
-        console.log(optionsBox);
-        console.log(option);
-
         optionsBox.innerHTML = option;
-
-    }else{
-        //show result function
     }
+
+    let answerButton = document.getElementById('answer');
+    answerButton.addEventListener('click', function(){
+        checkAnswer();
+    })
+}
+
+function checkAnswer(){
+    let chosenOption = document.getElementById('option').value;
+
+    console.log(chosenOption);
+
 }
