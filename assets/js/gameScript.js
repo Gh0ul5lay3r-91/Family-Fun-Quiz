@@ -72,14 +72,16 @@ function buildQuestion(){
     if(questionCount <= maxAmount){
         const numberOfQuestions = Math.floor(Math.random() * gameQuestions.length);
         currentQues = gameQuestions[numberOfQuestions];
-        console.log(currentQues);
-        let questionHTML = `
-        <h3 id="current-question>${currentQues.question}</h3>
+        let questionHtml = `
+        <h3 id="current-question">${currentQues.question}</h3>
         `;
+        console.log(questionHtml)
 
-        gameBox.innerHTML = questionHTML;
+        gameBox.innerHTML = questionHtml;
 
-        console.log(gameBox);
+        <ul>
+            <li></li>
+        </ul>
     }else{
         //show result function
     }
