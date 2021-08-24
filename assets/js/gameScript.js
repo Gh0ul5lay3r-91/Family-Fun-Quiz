@@ -33,7 +33,8 @@ var questions = [
     },
 ];
 
-let gameBox = document.getElementById('game-box');
+let gameBox = document.getElementById('game-question-box');
+let optionsBox = document.getElementById('game-options-box');
 let questionCountBox = document.getElementById('question-counter');
 let questionCount = 0;
 let score = 0;
@@ -75,13 +76,33 @@ function buildQuestion(){
         let questionHtml = `
         <h3 id="current-question">${currentQues.question}</h3>
         `;
-        console.log(questionHtml)
 
         gameBox.innerHTML = questionHtml;
 
-        <ul>
-            <li></li>
-        </ul>
+        let option = `
+        <li>
+            <label for="option">${currentQues.option1}</label>
+            <input type="radio" id="option" value="option1"/>
+        </li>
+        <li>
+            <label for="option2">${currentQues.option2}</label>
+            <input type="radio" id="option" value="option2"/>
+        </li>
+        <li>
+            <label for="option3">${currentQues.option3}</label>
+            <input type="radio" id="option" value="option3"/>
+        </li>
+        <li>
+            <label for="option4">${currentQues.option4}</label>
+            <input type="radio" id="option" value="option4"/>
+        </li>
+        `;
+
+        console.log(optionsBox);
+        console.log(option);
+
+        optionsBox.innerHTML = option;
+
     }else{
         //show result function
     }
