@@ -70,21 +70,17 @@ function buildQuestion(){
     questionCountBox.innerText = questionCount;
 
     if(questionCount <= maxAmount){
-        if(score > highScore){
-            highScore = score;
-            localStorage.setItem('High Score', highScore);
-        }
-        showResults();
-    }else{
         const numberOfQuestions = Math.floor(Math.random() * gameQuestions.length);
         currentQues = gameQuestions[numberOfQuestions];
         console.log(currentQues);
         let questionHTML = `
-        <h3 id="current-question>${currentQues}</h3>
+        <h3 id="current-question>${currentQues.question}</h3>
         `;
 
         gameBox.innerHTML = questionHTML;
 
         console.log(gameBox);
+    }else{
+        //show result function
     }
 }
