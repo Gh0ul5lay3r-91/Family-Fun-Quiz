@@ -116,12 +116,18 @@ function buildQuestion(){
 
     let answerButton = document.getElementById('answer');
     answerButton.addEventListener('click', function(){
-        if(chosenOption === currentQues.answer){
-            incrementCorrectScore();
-        }else{
-            incrementIncorrectScore();
-        }
+        checkAnswer(chosenOption, currentQues.answer);
     })
+}
+
+function checkAnswer(option, answer){
+    console.log(option);
+    console.log(answer);
+    if(option === answer){
+        incrementCorrectScore();
+    }else{
+        incrementIncorrectScore();
+    }
 }
 
 function incrementCorrectScore(){
