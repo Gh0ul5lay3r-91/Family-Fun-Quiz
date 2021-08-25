@@ -5,7 +5,7 @@ var questions = [
         option2: "Wexford",
         option3: "Cork",
         option4: "Dublin",
-        answer: 4
+        answer: "Dublin"
     },
     {
         question: "Where does the river Barrow end?",
@@ -13,7 +13,7 @@ var questions = [
         option2: "Co. Wexford",
         option3: "Co. Cork",
         option4: "Co. Waterford",
-        answer: 2
+        answer: "Co. Wexford"
     },
     {
         question: "Which county is considered the Royal County?",
@@ -21,7 +21,7 @@ var questions = [
         option2: "Co. Roscommon",
         option3: "Co. Sligo",
         option4: "Co. Louth",
-        answer: 1
+        answer: "Co. Meath"
     },
     {
         question: "What is the biggest county in the Republic of Ireland?",
@@ -29,7 +29,7 @@ var questions = [
         option2: "Co. Tipparary",
         option3: "Co. Mayo",
         option4: "Co. Cork",
-        answer: 4
+        answer: "Co. Cork"
     },
 ];
 
@@ -87,28 +87,34 @@ function buildQuestion(){
         let option = `
         <li>
             <label for="option1">${currentQues.option1}</label>
-            <input type="radio" name="answer_option" id="option1" value="option1"/>
+            <input type="radio" name="answer_option" id="option1" value="${currentQues.option1}" class="selected-answer"/>
         </li>
         <li>
             <label for="option2">${currentQues.option2}</label>
-            <input type="radio" name="answer_option" id="option2" value="option2"/>
+            <input type="radio" name="answer_option" id="option2" value="${currentQues.option2}" class="selected-answer"/>
         </li>
         <li>
             <label for="option3">${currentQues.option3}</label>
-            <input type="radio" name="answer_option" id="option3" value="option3"/>
+            <input type="radio" name="answer_option" id="option3" value="${currentQues.option3}" class="selected-answer"/>
         </li>
         <li>
             <label for="option4">${currentQues.option4}</label>
-            <input type="radio" name="answer_option" id="option4" value="option4"/>
+            <input type="radio" name="answer_option" id="option4" value="${currentQues.option4}" class="selected-answer"/>
         </li>
         `;
         optionsBox.innerHTML = option;
     }
 
-    let chosenOption = document.getElementById('option').value;
+    let selectedAnswer = Array.from(document.getElementsByClassName('selected-answer'));
+    console.log(selectedAnswer);
+    selectedAnswer.forEach((answer) => { 
+        answer.addEventListener('click', function() {
+            chosenOption = answer.value;
+            console.log(chosenOption);
+        });
+    });
+
     let answerButton = document.getElementById('answer');
-    console.log(chosenOption);
-    console.log(currentQues.answer);
     answerButton.addEventListener('click', function(){
         if(chosenOption === currentQues.answer){
             incrementCorrectScore();
