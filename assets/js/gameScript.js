@@ -41,7 +41,7 @@ let currentQues = {};
 let questionCount = 0;
 let score = 0;
 let incorrectScore = 0;
-const maxAmount = 0;
+const maxAmount = 4;
 let highScore = 0;
 
 
@@ -72,7 +72,7 @@ function buildQuestion(){
 
     questionCountBox.innerText = questionCount;
 
-    if(questionCount <= maxAmount){
+    if(questionCount >= maxAmount){
         //showResults();
         //localStorage.setItem('High Score', highScore);
     }else{
@@ -103,6 +103,8 @@ function buildQuestion(){
         </li>
         `;
         optionsBox.innerHTML = option;
+
+        gameQuestions.splice(numberOfQuestions, 1);
     }
 
     let selectedAnswer = Array.from(document.getElementsByClassName('selected-answer'));
@@ -125,8 +127,10 @@ function checkAnswer(option, answer){
     console.log(answer);
     if(option === answer){
         incrementCorrectScore();
+        buildQuestion();
     }else{
         incrementIncorrectScore();
+        buildQuestion();
     }
 }
 
@@ -145,9 +149,3 @@ function incrementIncorrectScore(){
 
     incorrectValue.innerText = incorrectScore;
 }
-/*function checkAnswer(){
-    let chosenOption = document.getElementById('option').value;
-
-    console.log(chosenOption);
-
-}*/
