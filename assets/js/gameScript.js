@@ -36,10 +36,12 @@ var questions = [
 let gameBox = document.getElementById('game-question-box');
 let optionsBox = document.getElementById('game-options-box');
 let questionCountBox = document.getElementById('question-counter');
+let highScoreBox = document.getElementById('high-score')
+let currentQues = {};
 let questionCount = 0;
 let score = 0;
-const maxAmount = 10;
-let highScoreBox = document.getElementById('high-score')
+let incorrectScore = 0;
+const maxAmount = 0;
 let highScore = 0;
 
 
@@ -70,7 +72,7 @@ function buildQuestion(){
 
     questionCountBox.innerText = questionCount;
 
-    if(questionCount >= maxAmount){
+    if(questionCount <= maxAmount){
         //showResults();
         //localStorage.setItem('High Score', highScore);
     }else{
@@ -85,33 +87,55 @@ function buildQuestion(){
         let option = `
         <li>
             <label for="option">${currentQues.option1}</label>
-            <input type="radio" id="option" value="option1"/>
+            <input type="radio" id="option" value="option"/>
         </li>
         <li>
-            <label for="option2">${currentQues.option2}</label>
-            <input type="radio" id="option" value="option2"/>
+            <label for="option">${currentQues.option2}</label>
+            <input type="radio" id="option" value="option"/>
         </li>
         <li>
-            <label for="option3">${currentQues.option3}</label>
-            <input type="radio" id="option" value="option3"/>
+            <label for="option">${currentQues.option3}</label>
+            <input type="radio" id="option" value="option"/>
         </li>
         <li>
-            <label for="option4">${currentQues.option4}</label>
-            <input type="radio" id="option" value="option4"/>
+            <label for="option">${currentQues.option4}</label>
+            <input type="radio" id="option" value="option"/>
         </li>
         `;
         optionsBox.innerHTML = option;
     }
 
+    let chosenOption = document.getElementById('option').value;
     let answerButton = document.getElementById('answer');
+    console.log(chosenOption);
+    console.log(currentQues.answer);
     answerButton.addEventListener('click', function(){
-        checkAnswer();
+        if(chosenOption === currentQues.answer){
+            incrementCorrectScore();
+        }else{
+            incrementIncorrectScore();
+        }
     })
 }
 
-function checkAnswer(){
+function incrementCorrectScore(){
+    let correctValue = document.getElementById('correct');
+
+    score++;
+
+    correctValue.innerText = score;
+}
+
+function incrementIncorrectScore(){
+    let incorrectValue = document.getElementById('incorrect');
+
+    incorrectScore++;
+
+    incorrectValue.innerText = incorrectScore;
+}
+/*function checkAnswer(){
     let chosenOption = document.getElementById('option').value;
 
     console.log(chosenOption);
 
-}
+}*/
