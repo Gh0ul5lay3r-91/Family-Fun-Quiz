@@ -86,20 +86,20 @@ function buildQuestion(){
 
         let option = `
         <li>
-            <label for="option">${currentQues.option1}</label>
-            <input type="radio" id="option" value="option"/>
+            <label for="option1">${currentQues.option1}</label>
+            <input type="radio" name="answer_option" id="option1" value="option1"/>
         </li>
         <li>
-            <label for="option">${currentQues.option2}</label>
-            <input type="radio" id="option" value="option"/>
+            <label for="option2">${currentQues.option2}</label>
+            <input type="radio" name="answer_option" id="option2" value="option2"/>
         </li>
         <li>
-            <label for="option">${currentQues.option3}</label>
-            <input type="radio" id="option" value="option"/>
+            <label for="option3">${currentQues.option3}</label>
+            <input type="radio" name="answer_option" id="option3" value="option3"/>
         </li>
         <li>
-            <label for="option">${currentQues.option4}</label>
-            <input type="radio" id="option" value="option"/>
+            <label for="option4">${currentQues.option4}</label>
+            <input type="radio" name="answer_option" id="option4" value="option4"/>
         </li>
         `;
         optionsBox.innerHTML = option;
