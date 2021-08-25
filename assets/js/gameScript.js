@@ -1,36 +1,38 @@
 var questions = [
     {
         question: "What is the capital of Ireland?",
-        option1: "Waterford",
-        option2: "Wexford",
-        option3: "Cork",
-        option4: "Dublin",
-        answer: "Dublin"
+        options: ["Waterford", "Wexford", "Cork", "Dublin"],
+        correctAnswer: 'Dublin'
     },
     {
-        question: "Where does the river Barrow end?",
-        option1: "Co. Dublin",
-        option2: "Co. Wexford",
-        option3: "Co. Cork",
-        option4: "Co. Waterford",
-        answer: "Co. Wexford"
-    },
-    {
-        question: "Which county is considered the Royal County?",
-        option1: "Co. Meath",
-        option2: "Co. Roscommon",
-        option3: "Co. Sligo",
-        option4: "Co. Louth",
-        answer: "Co. Meath"
-    },
-    {
-        question: "What is the biggest county in the Republic of Ireland?",
-        option1: "Co. Galway",
-        option2: "Co. Tipparary",
-        option3: "Co. Mayo",
-        option4: "Co. Cork",
-        answer: "Co. Cork"
-    },
+        question: "Where does the river Barrow end",
+        options: ["Co. Dublin", "Co. Wexford", "Co. Cork", "Co. Waterford"],
+        correctAnswer: 'Co. Wexford'
+    }
+    // {
+    //     question: "?",
+    //     option1: "",
+    //     option2: "",
+    //     option3: "",
+    //     option4: "",
+    //     answer: ""
+    // },
+    // {
+    //     question: "Which county is considered the Royal County?",
+    //     option1: "Co. Meath",
+    //     option2: "Co. Roscommon",
+    //     option3: "Co. Sligo",
+    //     option4: "Co. Louth",
+    //     answer: "Co. Meath"
+    // },
+    // {
+    //     question: "What is the biggest county in the Republic of Ireland?",
+    //     option1: "Co. Galway",
+    //     option2: "Co. Tipparary",
+    //     option3: "Co. Mayo",
+    //     option4: "Co. Cork",
+    //     answer: "Co. Cork"
+    // },
 ];
 
 let gameBox = document.getElementById('game-question-box');
@@ -41,7 +43,7 @@ let currentQues = {};
 let questionCount = 0;
 let score = 0;
 let incorrectScore = 0;
-const maxAmount = 4;
+const maxAmount = 0;
 let highScore = 0;
 
 
@@ -61,91 +63,71 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function startGame(){
     score = 0;
+    incorrectScore = 0;
     questionCount = 0;
     gameQuestions = [...questions];
-    
-    buildQuestion();
+    gameQuestions.sort( () => .5 - Math.random() );
+    showNextQuestion();
 }
 
-function buildQuestion(){
+function showNextQuestion(){
     questionCount++;
-
     questionCountBox.innerText = questionCount;
-
-    if(questionCount >= maxAmount){
-        //showResults();
-        //localStorage.setItem('High Score', highScore);
-    }else{
-        const numberOfQuestions = Math.floor(Math.random() * gameQuestions.length);
-        currentQues = gameQuestions[numberOfQuestions];
-        let questionHtml = `
-        <h3 id="current-question">${currentQues.question}</h3>
-        `;
+    if (questionCount > gameQuestions.length) {
+        alert('Game over');
+    } else {
+        currentQues = gameQuestions[questionCount - 1];
+        let questionHtml = `<h3 id="current-question">${currentQues.question}</h3>`;
 
         gameBox.innerHTML = questionHtml;
+        let optionsHTML = '';
 
-        let option = `
-        <li>
-            <label for="option1">${currentQues.option1}</label>
-            <input type="radio" name="answer_option" id="option1" value="${currentQues.option1}" class="selected-answer"/>
-        </li>
-        <li>
-            <label for="option2">${currentQues.option2}</label>
-            <input type="radio" name="answer_option" id="option2" value="${currentQues.option2}" class="selected-answer"/>
-        </li>
-        <li>
-            <label for="option3">${currentQues.option3}</label>
-            <input type="radio" name="answer_option" id="option3" value="${currentQues.option3}" class="selected-answer"/>
-        </li>
-        <li>
-            <label for="option4">${currentQues.option4}</label>
-            <input type="radio" name="answer_option" id="option4" value="${currentQues.option4}" class="selected-answer"/>
-        </li>
-        `;
-        optionsBox.innerHTML = option;
+        currentQues.options.forEach((eachOption, idx) => {
+            optionsHTML+= `
+                <li>
+                    <label for="option${idx}">${eachOption}</label>
+                    <input type="radio" name="answer_option" id="option${idx}" value="${eachOption}" class="answer-option"/>
+                </li>
+            `;
+        })
 
-        gameQuestions.splice(numberOfQuestions, 1);
+        optionsBox.innerHTML = optionsHTML;
     }
 
-    let selectedAnswer = Array.from(document.getElementsByClassName('selected-answer'));
-    console.log(selectedAnswer);
-    selectedAnswer.forEach((answer) => { 
-        answer.addEventListener('click', function() {
-            chosenOption = answer.value;
+
+    let options = Array.from(document.getElementsByClassName('answer-option'));
+    options.forEach((option) => {
+        option.addEventListener('click', function() {
+            chosenOption = option.value;
             console.log(chosenOption);
         });
     });
 
+
     let answerButton = document.getElementById('answer');
-    answerButton.addEventListener('click', function(){
-        checkAnswer(chosenOption, currentQues.answer);
-    })
+    answerButton.addEventListener('click', function handler(e) {
+        e.currentTarget.removeEventListener(e.type, handler);
+        checkAnswer(chosenOption, currentQues.correctAnswer);
+    });
 }
 
 function checkAnswer(option, answer){
-    console.log(option);
-    console.log(answer);
     if(option === answer){
         incrementCorrectScore();
-        buildQuestion();
-    }else{
+    } else{
         incrementIncorrectScore();
-        buildQuestion();
     }
+    showNextQuestion();
 }
 
 function incrementCorrectScore(){
     let correctValue = document.getElementById('correct');
-
     score++;
-
     correctValue.innerText = score;
 }
 
 function incrementIncorrectScore(){
     let incorrectValue = document.getElementById('incorrect');
-
     incorrectScore++;
-
     incorrectValue.innerText = incorrectScore;
 }
