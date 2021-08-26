@@ -8,31 +8,22 @@ var questions = [
         question: "Where does the river Barrow end",
         options: ["Co. Dublin", "Co. Wexford", "Co. Cork", "Co. Waterford"],
         correctAnswer: 'Co. Wexford'
-    }
-    // {
-    //     question: "?",
-    //     option1: "",
-    //     option2: "",
-    //     option3: "",
-    //     option4: "",
-    //     answer: ""
-    // },
-    // {
-    //     question: "Which county is considered the Royal County?",
-    //     option1: "Co. Meath",
-    //     option2: "Co. Roscommon",
-    //     option3: "Co. Sligo",
-    //     option4: "Co. Louth",
-    //     answer: "Co. Meath"
-    // },
-    // {
-    //     question: "What is the biggest county in the Republic of Ireland?",
-    //     option1: "Co. Galway",
-    //     option2: "Co. Tipparary",
-    //     option3: "Co. Mayo",
-    //     option4: "Co. Cork",
-    //     answer: "Co. Cork"
-    // },
+    },
+    {
+        question: "What is the capital of Ireland?",
+        options: ["Waterford", "Wexford", "Cork", "Dublin"],
+        correctAnswer: 'Dublin'
+    },
+    {
+        question: "What is the capital of Ireland?",
+        options: ["Waterford", "Wexford", "Cork", "Dublin"],
+        correctAnswer: 'Dublin'
+    },
+    {
+        question: "What is the capital of Ireland?",
+        options: ["Waterford", "Wexford", "Cork", "Dublin"],
+        correctAnswer: 'Dublin'
+    },
 ];
 
 let gameBox = document.getElementById('game-question-box');
@@ -59,6 +50,12 @@ document.addEventListener('DOMContentLoaded', function(){
     highScoreBox.innerText = highScore;
 
     startGame();
+})
+
+let restartGame = document.getElementById('reset');
+restartGame.addEventListener('click', function(){
+    console.log(restartGame)
+        startGame();
 })
 
 function startGame(){
