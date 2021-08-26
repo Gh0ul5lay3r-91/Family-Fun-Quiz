@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     startGame();
 })
-
+/* https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button*/
 let resetGame = document.getElementById('reset');
 resetGame.addEventListener('click', restartGame);
 function restartGame(){
