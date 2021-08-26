@@ -73,12 +73,15 @@ document.addEventListener('DOMContentLoaded', function(){
     startGame();
 })
 
-let restartGame = document.getElementById('reset');
-restartGame.addEventListener('click', function handler(e) {
-    e.currentTarget.removeEventListener(e.type, handler);
-    console.log(restartGame)
+let resetGame = document.getElementById('reset');
+resetGame.addEventListener('click', restartGame);
+function restartGame(){
+    score = 0;
+    incorrectScore = 0;
+    questionCount = 0;
+    displayUserScore();
     startGame();
-})
+}
 
 function displayUserScore(){
     const userName = localStorage.getItem('name');
@@ -99,9 +102,6 @@ function displayUserScore(){
 
 function startGame(){
     gameInPlay = true;
-    score = 0;
-    incorrectScore = 0;
-    questionCount = 0;
     gameQuestions = [...questions];
     gameQuestions.sort( () => .5 - Math.random() );
     showNextQuestion();
