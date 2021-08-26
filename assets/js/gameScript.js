@@ -62,7 +62,6 @@ let currentQues = {};
 let questionCount = 0;
 let score = 0;
 let incorrectScore = 0;
-const maxAmount = 0;
 let highScore = 0;
 let gameInPlay = false;
 
