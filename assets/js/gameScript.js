@@ -24,6 +24,31 @@ var questions = [
         options: ["Waterford", "Wexford", "Cork", "Dublin"],
         correctAnswer: 'Dublin'
     },
+    {
+        question: "What is the capital of Ireland?",
+        options: ["Waterford", "Wexford", "Cork", "Dublin"],
+        correctAnswer: 'Dublin'
+    },
+    {
+        question: "What is the capital of Ireland?",
+        options: ["Waterford", "Wexford", "Cork", "Dublin"],
+        correctAnswer: 'Dublin'
+    },
+    {
+        question: "What is the capital of Ireland?",
+        options: ["Waterford", "Wexford", "Cork", "Dublin"],
+        correctAnswer: 'Dublin'
+    },
+    {
+        question: "What is the capital of Ireland?",
+        options: ["Waterford", "Wexford", "Cork", "Dublin"],
+        correctAnswer: 'Dublin'
+    },
+    {
+        question: "What is the capital of Ireland?",
+        options: ["Waterford", "Wexford", "Cork", "Dublin"],
+        correctAnswer: 'Dublin'
+    },
 ];
 
 let mainBox = document.getElementById('game-box');
@@ -49,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function(){
     `;
 
     questionCountBox.innerText = questionCount;
-    highScoreBox.innerText = localStorage.getItem(highScore);
+    highScoreBox.innerText = highScore;
 
     startGame();
 })
@@ -147,16 +172,15 @@ function endOfGame(correct, incorrect){
     if(score <= correct){
         gameBox.innerHTML = passMessage;
         optionsBox.innerHTML = '';
+        if(score >= highScore){
+            highScore = score;
+            alert('Well done, you got the highscore');
+        } else{
+            alert('Hard Luck, you didnt get the high score');
+        }
     } else{
         gameBox.innerHTML = failMessage;
         optionsBox.innerHTML = '';
-    }
-
-    if(score <= highScore){
-        highScore = score;
-        alert('Well done, you got the highscore');
-    } else{
-        alert('Hard Luck, you didnt get the high score');
     }
 
     localStorage.setItem('High Score', highScore);
