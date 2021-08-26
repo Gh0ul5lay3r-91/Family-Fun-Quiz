@@ -26,6 +26,7 @@ var questions = [
     },
 ];
 
+let mainBox = document.getElementById('game-box');
 let gameBox = document.getElementById('game-question-box');
 let optionsBox = document.getElementById('game-options-box');
 let questionCountBox = document.getElementById('question-counter');
@@ -36,6 +37,7 @@ let score = 0;
 let incorrectScore = 0;
 const maxAmount = 0;
 let highScore = 0;
+let gameInPlay = false;
 
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
     `;
 
     questionCountBox.innerText = questionCount;
-    highScoreBox.innerText = highScore;
+    highScoreBox.innerText = localStorage.getItem(highScore);
 
     startGame();
 })
@@ -59,6 +61,7 @@ restartGame.addEventListener('click', function(){
 })
 
 function startGame(){
+    gameInPlay = true;
     score = 0;
     incorrectScore = 0;
     questionCount = 0;
@@ -68,17 +71,18 @@ function startGame(){
 }
 
 function showNextQuestion(){
-    questionCount++;
-    questionCountBox.innerText = questionCount;
-    if (questionCount > gameQuestions.length) {
-        alert('Game over');
+    if (questionCount >= gameQuestions.length) {
+        gameInPlay = false;
+        endOfGame(score, incorrectScore);
     } else {
+        questionCount++;
+        questionCountBox.innerText = questionCount;
         currentQues = gameQuestions[questionCount - 1];
         let questionHtml = `<h3 id="current-question">${currentQues.question}</h3>`;
 
         gameBox.innerHTML = questionHtml;
+        
         let optionsHTML = '';
-
         currentQues.options.forEach((eachOption, idx) => {
             optionsHTML+= `
                 <li>
@@ -100,11 +104,14 @@ function showNextQuestion(){
         });
     });
 
-
     let answerButton = document.getElementById('answer');
     answerButton.addEventListener('click', function handler(e) {
         e.currentTarget.removeEventListener(e.type, handler);
-        checkAnswer(chosenOption, currentQues.correctAnswer);
+        if(gameInPlay === true){
+            checkAnswer(chosenOption, currentQues.correctAnswer);
+        } else{
+            alert('Game not in play');
+        }
     });
 }
 
@@ -127,4 +134,30 @@ function incrementIncorrectScore(){
     let incorrectValue = document.getElementById('incorrect');
     incorrectScore++;
     incorrectValue.innerText = incorrectScore;
+}
+
+function endOfGame(correct, incorrect){
+    let passMessage = `
+    <h3 id="pass-game">You have finished the game, Well done your score was ${correct}. You have passed the quiz!</h3>
+    `;
+    let failMessage = `
+    <h3 id="fail-game">You have finished the game, Hard luck your score was ${incorrect}. You havent passed the quiz</h3>
+    `;
+
+    if(score <= correct){
+        gameBox.innerHTML = passMessage;
+        optionsBox.innerHTML = '';
+    } else{
+        gameBox.innerHTML = failMessage;
+        optionsBox.innerHTML = '';
+    }
+
+    if(score <= highScore){
+        highScore = score;
+        alert('Well done, you got the highscore');
+    } else{
+        alert('Hard Luck, you didnt get the high score');
+    }
+
+    localStorage.setItem('High Score', highScore);
 }
