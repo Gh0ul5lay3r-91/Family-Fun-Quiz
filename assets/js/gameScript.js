@@ -152,9 +152,6 @@ function showNextQuestion(){
             alert('Game not in play');
         }
     });
-
-    //correctValue.innerText = score;
-    //incorrectValue.innerText = incorrectScore;
 }
 
 function checkAnswer(option, answer){
