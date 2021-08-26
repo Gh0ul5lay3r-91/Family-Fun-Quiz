@@ -76,11 +76,7 @@ document.addEventListener('DOMContentLoaded', function(){
 let resetGame = document.getElementById('reset');
 resetGame.addEventListener('click', restartGame);
 function restartGame(){
-    score = 0;
-    incorrectScore = 0;
-    questionCount = 0;
-    displayUserScore();
-    startGame();
+    location.reload();
 }
 
 function displayUserScore(){
@@ -102,6 +98,9 @@ function displayUserScore(){
 
 function startGame(){
     gameInPlay = true;
+    score = 0;
+    incorrectScore = 0;
+    questionCount = 0;
     gameQuestions = [...questions];
     gameQuestions.sort( () => .5 - Math.random() );
     showNextQuestion();
