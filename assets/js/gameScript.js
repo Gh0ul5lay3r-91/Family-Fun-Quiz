@@ -56,6 +56,8 @@ let gameBox = document.getElementById('game-question-box');
 let optionsBox = document.getElementById('game-options-box');
 let questionCountBox = document.getElementById('question-counter');
 let highScoreBox = document.getElementById('high-score')
+let incorrectValue = document.getElementById('incorrect');
+let correctValue = document.getElementById('correct');
 let currentQues = {};
 let questionCount = 0;
 let score = 0;
@@ -67,10 +69,15 @@ let gameInPlay = false;
 
 document.addEventListener('DOMContentLoaded', function(){
     const userName = localStorage.getItem('name');
-    let userScore = document.getElementById('user-score');
+    let correctUserScore = document.getElementById('correct-user-score');
+    let incorrectUserScore = document.getElementById('incorrect-user-score');
 
-    userScore.innerHTML = `
+    correctUserScore.innerHTML = `
     <p class="results">${userName} your score is:<span id="correct">${score}</span></p>
+    `;
+
+    incorrectUserScore.innerHTML = `
+    <p class="results">Incorrect Answers:<span id="incorrect">${incorrectScore}</span></p>
     `;
 
     questionCountBox.innerText = questionCount;
@@ -138,6 +145,9 @@ function showNextQuestion(){
             alert('Game not in play');
         }
     });
+
+    //correctValue.innerText = score;
+    //incorrectValue.innerText = incorrectScore;
 }
 
 function checkAnswer(option, answer){
@@ -150,15 +160,11 @@ function checkAnswer(option, answer){
 }
 
 function incrementCorrectScore(){
-    let correctValue = document.getElementById('correct');
     score++;
-    correctValue.innerText = score;
 }
 
 function incrementIncorrectScore(){
-    let incorrectValue = document.getElementById('incorrect');
     incorrectScore++;
-    incorrectValue.innerText = incorrectScore;
 }
 
 function endOfGame(correct, incorrect){
