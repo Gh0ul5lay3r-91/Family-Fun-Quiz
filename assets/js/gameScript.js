@@ -5,49 +5,49 @@ var questions = [
         correctAnswer: 'Dublin'
     },
     {
-        question: "Where does the river Barrow end",
-        options: ["Co. Dublin", "Co. Wexford", "Co. Cork", "Co. Waterford"],
-        correctAnswer: 'Co. Wexford'
+        question: "In what year did Ireland begin to use euro as its currency?",
+        options: ["2012", "2000", "2005", "2002"],
+        correctAnswer: '2002'
     },
     {
-        question: "What is the capital of Ireland?",
-        options: ["Waterford", "Wexford", "Cork", "Dublin"],
-        correctAnswer: 'Dublin'
+        question: "What is the longest river in the Britsih Isles?",
+        options: ["River Thames", "River Severn", "River Shannon", "River Mersey"],
+        correctAnswer: 'River Shannon'
     },
     {
-        question: "What is the capital of Ireland?",
-        options: ["Waterford", "Wexford", "Cork", "Dublin"],
-        correctAnswer: 'Dublin'
+        question: "What is the highest Mountain in the Alps?",
+        options: ["Mont Blanc", "Monte Rosa", "Matterhorn", "Weisshorn"],
+        correctAnswer: 'Mont Blanc'
     },
     {
-        question: "What is the capital of Ireland?",
-        options: ["Waterford", "Wexford", "Cork", "Dublin"],
-        correctAnswer: 'Dublin'
+        question: "What is the name of the first album released by the Beetles?",
+        options: ["Abbey Road", "A Hard Days Night", "Help!", "Please Please Me"],
+        correctAnswer: ''
     },
     {
-        question: "What is the capital of Ireland?",
-        options: ["Waterford", "Wexford", "Cork", "Dublin"],
-        correctAnswer: 'Dublin'
+        question: "Which of these football stadiums are not in London?",
+        options: ["Craven Cottage", "Loftus Road", "Molineux", "Griffen Park"],
+        correctAnswer: 'Molineux'
     },
     {
-        question: "What is the capital of Ireland?",
-        options: ["Waterford", "Wexford", "Cork", "Dublin"],
-        correctAnswer: 'Dublin'
+        question: "How many Players can a rugby team field?",
+        options: ["11", "10", "13", "15"],
+        correctAnswer: '15'
     },
     {
-        question: "What is the capital of Ireland?",
-        options: ["Waterford", "Wexford", "Cork", "Dublin"],
-        correctAnswer: 'Dublin'
+        question: "In what year was the Good Friday Agreement signed?",
+        options: ["1998", "1997", "2000", "2003"],
+        correctAnswer: '1998'
     },
     {
-        question: "What is the capital of Ireland?",
-        options: ["Waterford", "Wexford", "Cork", "Dublin"],
-        correctAnswer: 'Dublin'
+        question: "When Henry VIII died in 1547 which wife was he  still married to?",
+        options: ["Catherine Howard", "Anna of Cleves", "Catherine Parr", "Jane Seymor"],
+        correctAnswer: 'Catherine Parr'
     },
     {
-        question: "What is the capital of Ireland?",
-        options: ["Waterford", "Wexford", "Cork", "Dublin"],
-        correctAnswer: 'Dublin'
+        question: "Who is the youngest actress to win an Oscar",
+        options: ["Mary Bedham", "Tatum O Neal", "Marlee Matlin", "Anna Paquin"],
+        correctAnswer: 'Tatum O Neal'
     },
 ];
 
@@ -68,6 +68,20 @@ let gameInPlay = false;
 
 
 document.addEventListener('DOMContentLoaded', function(){
+
+    displayUserScore();
+
+    startGame();
+})
+
+let restartGame = document.getElementById('reset');
+restartGame.addEventListener('click', function handler(e) {
+    e.currentTarget.removeEventListener(e.type, handler);
+    console.log(restartGame)
+    startGame();
+})
+
+function displayUserScore(){
     const userName = localStorage.getItem('name');
     let correctUserScore = document.getElementById('correct-user-score');
     let incorrectUserScore = document.getElementById('incorrect-user-score');
@@ -82,15 +96,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     questionCountBox.innerText = questionCount;
     highScoreBox.innerText = highScore;
-
-    startGame();
-})
-
-let restartGame = document.getElementById('reset');
-restartGame.addEventListener('click', function(){
-    console.log(restartGame)
-        startGame();
-})
+}
 
 function startGame(){
     gameInPlay = true;
@@ -125,6 +131,8 @@ function showNextQuestion(){
         })
 
         optionsBox.innerHTML = optionsHTML;
+
+        displayUserScore();
     }
 
 
