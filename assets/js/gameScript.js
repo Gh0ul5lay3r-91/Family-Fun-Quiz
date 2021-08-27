@@ -54,6 +54,7 @@ var questions = [
 let gameBoxNode = document.getElementById('game-question-box');
 let optionsBoxNode = document.getElementById('game-options-box');
 let questionCountBoxNode = document.getElementById('question-counter');
+let counterBoxNode = document.getElementById('counter-box');
 let correctUserScoreNode = document.getElementById('correct-user-score');
 let incorrectUserScoreNode = document.getElementById('incorrect-user-score');
 let submitBoxNode = document.getElementById('submit-box');
@@ -74,17 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
     startGame();
 });
 
-
-/* https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button*/
-let resetGame = document.getElementById('reset');
-resetGame.addEventListener('click', restartGame);
-
-function restartGame() {
-    initVariables();
-    updateUI();
-    startGame();
-}
-
 function updateUI() {
     correctUserScoreNode.innerHTML = `
         <p class="results">${userName} Your score is:<span id="correct">${score}</span></p>
@@ -92,6 +82,10 @@ function updateUI() {
 
     incorrectUserScoreNode.innerHTML = `
         <p class="results">Incorrect Answers:<span id="incorrect">${incorrectScore}</span></p>
+    `;
+
+    submitBoxNode.innerHTML = `
+        <button class="play-button" id="answer" type="submit">Answer</button>
     `;
 
     questionCountBoxNode.innerText = questionCount;
@@ -181,6 +175,10 @@ function gameOver(){
     let failMessage = `
     <h3 id="fail-game">You have finished the game, Hard luck your score was ${incorrectScore}. You havent passed the quiz</h3>
     `;
+    let highScoreMessage = `
+    <p>Well done, you got the high score</p>
+    <p>The high score is:<span id="high-score">${highScore}</span></p>
+    `;
     let resetButton = `
     <button class="play-button" id="reset" type="reset">Restart</button>
     `;
@@ -191,6 +189,15 @@ function gameOver(){
     highScoreBoxNode.innerHTML = '';
     submitBoxNode.innerHTML = resetButton;
 
+    /* https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button*/
+    let resetGame = document.getElementById('reset');
+    resetGame.addEventListener('click', restartGame);
+
+    function restartGame() {
+        initVariables();
+        updateUI();
+        startGame();
+    }
 
     // Check if user had answered alteast 50% of the questions correctly
     if(score > (0.5 * gameQuestions.length)){
@@ -205,8 +212,6 @@ function gameOver(){
     if(score >= highScore){
         highScore = score;
         localStorage.setItem('highScore', highScore);
-        alert('Well done, you got the highscore');
-    } else{
-        alert('Hard Luck, you didnt get the high score');
+        counterBoxNode.innerHTML = highScoreMessage;
     }
 }
