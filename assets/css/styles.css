@@ -134,7 +134,7 @@ label{
 #counter-box{
     width: 100%;
     flex-grow: 4;
-    margin-bottom: 2%;
+    display: flex;
 }
 
 /* Media Queries */

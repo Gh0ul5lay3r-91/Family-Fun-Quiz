@@ -22,7 +22,7 @@ var questions = [
     {
         question: "What is the name of the first album released by the Beetles?",
         options: ["Abbey Road", "A Hard Days Night", "Help!", "Please Please Me"],
-        correctAnswer: ''
+        correctAnswer: 'Please Please Me'
     },
     {
         question: "Which of these football stadiums are not in London?",
@@ -88,8 +88,14 @@ function updateUI() {
         <button class="play-button" id="answer" type="submit">Answer</button>
     `;
 
-    questionCountBoxNode.innerText = questionCount;
-    highScoreBoxNode.innerText = highScore;
+    counterBoxNode.innerHTML = `
+        <div class="styling-box">
+            <p>Question Number:<span id="question-counter">${questionCount}</span></p><!--This span is targeted by JS to display the question number-->
+        </div>
+        <div class="styling-box">
+            <p>The high score is:<span id="high-score">${highScore}</span></p><!--This Span is targeted to display the high score-->
+        </div>
+    `;
 }
 
 function initVariables() {
@@ -112,7 +118,7 @@ function showNextQuestion() {
         gameOver();
     } else {
         questionCount++;
-        questionCountBoxNode.innerText = questionCount;
+        //questionCountBoxNode.innerText = questionCount;
         currentQues = gameQuestions[questionCount - 1];
         let questionHtml = `<h3 id="current-question">${questionCount}:${currentQues.question}</h3>`;
 
@@ -185,8 +191,6 @@ function gameOver(){
 
     incorrectUserScoreNode.innerHTML = '';
     correctUserScoreNode.innerHTML = '';
-    questionCountBoxNode.innerHTML = '';
-    highScoreBoxNode.innerHTML = '';
     submitBoxNode.innerHTML = resetButton;
 
     /* https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button*/
