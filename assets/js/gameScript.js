@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function updateUI() {
     correctUserScoreNode.innerHTML = `
-        <p class="results">${userName} Your score is:<span id="correct">${score}</span></p>
+        <p class="results">${userName} Your score is: <span id="correct">${score}</span></p>
     `;
 
     incorrectUserScoreNode.innerHTML = `
-        <p class="results">Incorrect Answers:<span id="incorrect">${incorrectScore}</span></p>
+        <p class="results">Incorrect Answers: <span id="incorrect">${incorrectScore}</span></p>
     `;
 
     submitBoxNode.innerHTML = `
@@ -90,10 +90,10 @@ function updateUI() {
 
     counterBoxNode.innerHTML = `
         <div class="styling-box">
-            <p>Question Number:<span id="question-counter">${questionCount}</span></p><!--This span is targeted by JS to display the question number-->
+            <p>Question Number: <span id="question-counter">${questionCount}</span></p><!--This span is targeted by JS to display the question number-->
         </div>
         <div class="styling-box">
-            <p>The high score is:<span id="high-score">${highScore}</span></p><!--This Span is targeted to display the high score-->
+            <p>The high score is: <span id="high-score">${highScore}</span></p><!--This Span is targeted to display the high score-->
         </div>
     `;
 }

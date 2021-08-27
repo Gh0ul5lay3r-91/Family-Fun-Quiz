@@ -135,10 +135,20 @@ label{
     width: 100%;
     flex-grow: 4;
     display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#correct{
+    color: #09ff00
+}
+
+#incorrect{
+    color: #ff0000
 }
 
 /* Media Queries */
-@media screen and (max-width: 405px){
+@media screen and (max-width: 1000px){
     h1,h2,p{
         font-size: 17px;
         padding: 10px;
@@ -165,5 +175,11 @@ label{
 
     .play-button{
         margin: 2%;
+    }
+
+    #counter-box{
+        display: flex;
+        flex-direction: column;
+        padding: 1px;
     }
 }
