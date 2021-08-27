@@ -55,6 +55,8 @@ let mainBox = document.getElementById('game-box');
 let gameBox = document.getElementById('game-question-box');
 let optionsBox = document.getElementById('game-options-box');
 let questionCountBox = document.getElementById('question-counter');
+const userName = localStorage.getItem('name');
+let correctUserScore = document.getElementById('correct-user-score');    let incorrectUserScore = document.getElementById('incorrect-user-score');
 let highScoreBox = document.getElementById('high-score')
 let incorrectValue = document.getElementById('incorrect');
 let correctValue = document.getElementById('correct');
@@ -80,9 +82,6 @@ function restartGame(){
 }
 
 function displayUserScore(){
-    const userName = localStorage.getItem('name');
-    let correctUserScore = document.getElementById('correct-user-score');
-    let incorrectUserScore = document.getElementById('incorrect-user-score');
 
     correctUserScore.innerHTML = `
     <p class="results">${userName} your score is:<span id="correct">${score}</span></p>
@@ -178,7 +177,10 @@ function endOfGame(correct, incorrect){
     <h3 id="fail-game">You have finished the game, Hard luck your score was ${incorrect}. You havent passed the quiz</h3>
     `;
 
-    displayUserScore();
+    incorrectUserScore.innerHTML = '';
+    correctUserScore.innerHTML = '';
+    questionCountBox.innerHTML = '';
+    highScoreBox.innerHTML = '';
 
     if(score <= correct){
         gameBox.innerHTML = passMessage;
