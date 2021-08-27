@@ -132,3 +132,17 @@ label{
 }
 
 /* Media Queries */
+@media screen and (max-width: 405px){
+    .form-input{
+        width: 75%;
+    }
+    #name-form div{
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .play-button{
+        margin: 2%;
+    }
+}
