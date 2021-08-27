@@ -10,7 +10,7 @@ var questions = [
         correctAnswer: '2002'
     },
     {
-        question: "What is the longest river in the Britsih Isles?",
+        question: "What is the longest river in the British Isles?",
         options: ["River Thames", "River Severn", "River Shannon", "River Mersey"],
         correctAnswer: 'River Shannon'
     },
@@ -56,6 +56,7 @@ let optionsBoxNode = document.getElementById('game-options-box');
 let questionCountBoxNode = document.getElementById('question-counter');
 let correctUserScoreNode = document.getElementById('correct-user-score');
 let incorrectUserScoreNode = document.getElementById('incorrect-user-score');
+let submitBoxNode = document.getElementById('submit-box');
 let highScoreBoxNode = document.getElementById('high-score');
 const userName = localStorage.getItem('name');
 let currentQues = {};
@@ -119,7 +120,7 @@ function showNextQuestion() {
         questionCount++;
         questionCountBoxNode.innerText = questionCount;
         currentQues = gameQuestions[questionCount - 1];
-        let questionHtml = `<h3 id="current-question">${currentQues.question}</h3>`;
+        let questionHtml = `<h3 id="current-question">${questionCount}:${currentQues.question}</h3>`;
 
         gameBoxNode.innerHTML = questionHtml;
 
@@ -127,8 +128,8 @@ function showNextQuestion() {
         currentQues.options.forEach((eachOption, idx) => {
             optionsHTML+= `
                 <li class="option-list">
-                    <label for="option${idx}">${eachOption}</label>
                     <input type="radio" name="answer_option" id="option${idx}" value="${eachOption}" class="answer-option"/>
+                    <label for="option${idx}">${eachOption}</label>
                 </li>
             `;
         });
@@ -173,18 +174,23 @@ function incrementIncorrectScore(){
     incorrectScore++;
 }
 
-function endOfGame(){
+function gameOver(){
     let passMessage = `
     <h3 id="pass-game">You have finished the game, Well done your score was ${score}. You have passed the quiz!</h3>
     `;
     let failMessage = `
     <h3 id="fail-game">You have finished the game, Hard luck your score was ${incorrectScore}. You havent passed the quiz</h3>
     `;
+    let resetButton = `
+    <button class="play-button" id="reset" type="reset">Restart</button>
+    `;
 
     incorrectUserScoreNode.innerHTML = '';
     correctUserScoreNode.innerHTML = '';
     questionCountBoxNode.innerHTML = '';
     highScoreBoxNode.innerHTML = '';
+    submitBoxNode.innerHTML = resetButton;
+
 
     // Check if user had answered alteast 50% of the questions correctly
     if(score > (0.5 * gameQuestions.length)){

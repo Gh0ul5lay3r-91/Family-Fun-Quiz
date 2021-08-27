@@ -26,7 +26,6 @@ h1, h2{
 /*Main web page structure*/
 .main-box{
     text-align: center;
-    /*height: 50%;*/
     width: 50%;
     position: absolute;
     top: 50%;
@@ -87,26 +86,35 @@ label{
 
 /*Styles for spans containing incorrect and correct scores on the quiz page*/
 #result-box{
-    height: 12.5%;
-    width: 100%;
+    width: 96%;
     height: 25%;
     text-align: center;
     flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
 }
 
 #game-box{
     text-align: center;
     height: 40%;
     width: 100%;
-    /*height: 25%;*/
     flex-grow: 2;
 }
 
 #game-question-box{
     margin-bottom: 1%;
+    padding: 10px;
+}
+
+#game-options-box{
+    text-align: left;
+    padding: 10px;
 }
 
 .option-list{
+    list-style-type: none;
     width: 100%;
     height: 100%;
     background-color: #ffffff;
@@ -119,15 +127,12 @@ label{
 
 #submit-box{
     width: 100%;
-    /*height: 25%;*/
     flex-grow: 3;
-    margin-top: 1%;
-    margin-bottom:1%;
+    padding: 10px;
 }
 
 #counter-box{
     width: 100%;
-    /*height: 25%;*/
     flex-grow: 4;
     margin-bottom: 2%;
 }
@@ -138,13 +143,24 @@ label{
         font-size: 17px;
         padding: 10px;
     }
+
+    #result-box{
+        display: flex;
+        flex-direction: column;
+    }
+
     .form-input{
         width: 75%;
     }
+
     #name-form div{
         padding: 5%;
         display: flex;
         flex-direction: column;
+    }
+
+    #game-options-box{
+        text-align: center;
     }
 
     .play-button{
