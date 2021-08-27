@@ -8,15 +8,15 @@
     <title>Family Fun Quiz</title>
 </head>
 <body>
+    <!--This box hods the divs that are targeted by JS and the scores are displayed dynamically-->
+    <div id="result-box">
+        <!--Users correct score display-->
+        <div id="correct-user-score"></div>
+        <!--Users incorrect score display-->
+        <div id="incorrect-user-score"></div>
+    </div>
     <!--Main box div that holds all the HTML for the app-->
     <div class="main-box main-box-color">
-        <!--This box hods the divs that are targeted by JS and the scores are displayed dynamically-->
-        <div id="result-box">
-            <!--Users correct score display-->
-            <div id="correct-user-score"></div>
-            <!--Users incorrect score display-->
-            <div id="incorrect-user-score"></div>
-        </div>
         <!--This div is the main game display, in here both the question and the options are displayed-->
         <div id="game-box">
             <!--Questions displayed here-->
@@ -31,11 +31,11 @@
             <!--Reset Button-->
             <button class="play-button" id="reset" type="reset">Restart</button>
         </div>
-        <!--This div holds the counter for both the question number that the user is currently on and the high score-->
-        <div id="counter-box">
-            <p>Question Number:<span id="question-counter">0</span></p><!--This span is targeted by JS to display the question number-->
-            <p>The high score is:<span id="high-score">0</span></p><!--This Span is targeted to display the high score-->
-        </div>
+    </div>
+    <!--This div holds the counter for both the question number that the user is currently on and the high score-->
+    <div id="counter-box">
+        <p>Question Number:<span id="question-counter">0</span></p><!--This span is targeted by JS to display the question number-->
+        <p>The high score is:<span id="high-score">0</span></p><!--This Span is targeted to display the high score-->
     </div>
     <!--Script file that runs the game-->
     <script src="assets/js/gameScript.js"></script>

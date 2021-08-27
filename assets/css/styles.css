@@ -34,7 +34,7 @@ h1, h2{
     transform: translate(-50%, -50%);
     border-radius: 5px;
     flex-direction: column;
-    box-shadow: 5px 10px #888888;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .main-box-color{
@@ -50,6 +50,7 @@ h1, h2{
 
 /*Styles for form on sign up page and clickable buttons*/
 .form-input{
+    background-color: rgb(240, 240, 240);
     width: 40%;
     height: 20px;
     margin: 10px 5px 10px 30px;
@@ -74,14 +75,14 @@ label{
     text-decoration: none;
     background-color: #ff0000;
     font-size: large;
-    color: #111111;
+    color: #ffffff;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .play-button:hover{
-    background-color: #ffffff;
-    color: #ff0000;
+    background-color: #ff6464;
+    color: #ffffff;
 }
 
 /*Styles for spans containing incorrect and correct scores on the quiz page*/
@@ -133,6 +134,10 @@ label{
 
 /* Media Queries */
 @media screen and (max-width: 405px){
+    h1,h2,p{
+        font-size: 17px;
+        padding: 10px;
+    }
     .form-input{
         width: 75%;
     }
