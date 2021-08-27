@@ -3,7 +3,7 @@
     for their Name. */
 document.addEventListener("DOMContentLoaded", function(){
     let html = `
-        <h2>Please provide your name</h2>
+        <h3>Please provide your name</h3>
         <!--First Name-->
         <form id="name-form">
             <div>
