@@ -178,6 +178,8 @@ function endOfGame(correct, incorrect){
     <h3 id="fail-game">You have finished the game, Hard luck your score was ${incorrect}. You havent passed the quiz</h3>
     `;
 
+    displayUserScore();
+
     if(score <= correct){
         gameBox.innerHTML = passMessage;
         optionsBox.innerHTML = '';

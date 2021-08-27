@@ -101,6 +101,10 @@ label{
     flex-grow: 2;
 }
 
+#game-question-box{
+    margin-bottom: 1%;
+}
+
 .option-list{
     width: 100%;
     height: 100%;
