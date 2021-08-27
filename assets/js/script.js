@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function(){
 It the sets the name to local storage so the gameScript can use it. */
 function playGame(){
     let userName = document.getElementById('name').value;
-    let welcomeBoxNode = document.getElementById('main-box');
+    let welcomeBoxNode = document.getElementById('form-box');
     let welcomeMessage = `
     <h2>Welcome to the quiz ${userName}</h2>
     <a href="quiz.html"><button class="play-button" type="submit">Lets Go!</button></a>
