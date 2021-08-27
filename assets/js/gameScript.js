@@ -50,17 +50,15 @@ var questions = [
         correctAnswer: 'Tatum O Neal'
     },
 ];
-
-let mainBox = document.getElementById('game-box');
+  
 let gameBox = document.getElementById('game-question-box');
 let optionsBox = document.getElementById('game-options-box');
 let questionCountBox = document.getElementById('question-counter');
 const userName = localStorage.getItem('name');
 let correctUserScore = document.getElementById('correct-user-score');    let incorrectUserScore = document.getElementById('incorrect-user-score');
-let highScoreBox = document.getElementById('high-score')
-let incorrectValue = document.getElementById('incorrect');
-let correctValue = document.getElementById('correct');
+let highScoreBox = document.getElementById('high-score');
 let currentQues = {};
+let gameQuestions = [];
 let questionCount = 0;
 let score = 0;
 let incorrectScore = 0;
@@ -73,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function(){
     displayUserScore();
 
     startGame();
-})
+});
 /* https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button*/
 let resetGame = document.getElementById('reset');
 resetGame.addEventListener('click', restartGame);
@@ -125,7 +123,7 @@ function showNextQuestion(){
                     <input type="radio" name="answer_option" id="option${idx}" value="${eachOption}" class="answer-option"/>
                 </li>
             `;
-        })
+        });
 
         optionsBox.innerHTML = optionsHTML;
 
