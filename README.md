@@ -1,104 +1,181 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Cycling 101 Logo](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/logo.png)
+![Cycling 101 Devices](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/site-example1.png)
 
-Welcome Gh0ul5lay3r-91,
+## Introduction
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+Cycling 101 is a website aimed at people from the Belfast area who are interested to start cycling or who have just started. Cycling 101 will provide new cyclists with information about the equipment they will need to start cycling like the type of bicycle, clothing, tools and information on how to choose a route to cycle. 
+Cycling 101 Website will also offer route suggestions and will provide people with links to shop websites or further information websites. Cyclists can also sign up to a contact list so that they can be made aware of either events or meet ups down the line.
+As part of the User Experience Design process, I interviewed a few friends who cycle about what they would have wanted to know when they were starting off cycling.
 
-## Gitpod Reminders
+Live link can be found here - https://gh0ul5lay3r-91.github.io/Family-Fun-Quiz/
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Opportunities were listed out to decide what needed to be done and what could wait.
 
-`python3 -m http.server`
+| Opportunity                          | Importance | Viability/Feasability |
+| ------------------------------------ | ---------- | --------------------- | 
+| Information on equipment             | 5          | 5                     | 
+| Information about where to cycle     | 5          | 4                     |
+| Information on how to choose a route | 3          | 5                     |
+| Where to get help                    | 5          | 5                     |
+| Increase Interaction                 | 3          | 4                     | 
+| Photo Gallery                        | 3          | 1                     |
 
-A blue button should appear to click: _Make Public_,
+It was decided that information on equipment, route and an interaction page were the most important and that a photo gallery would need to wait potentially for an update to the site further down the line. Work then began on User stories and wireframes. 
 
-Another blue button should appear to click: _Open Browser_.
+User stories consisted of placing myself in the shoes of a new cyclist and beginner cyclist asking myself what they might what from a website like this.
+* New Cyclist
+    * Equipment
+        * As a new cyclist, I want to know what bike I should go for.
+        * As a new cyclist, I want to know if I should use padded shorts.
+        * As a new cyclist, I want to know which helmet suits best.
+        * As as new cyclist, I want to know what tools to buy.
+    * Route
+        * As a new cyclist, I want to know what routes are popular so that I dont get lost.
+        * As a new cyclist, I want to know what routes to take so I can avoid traffic.
+    * Contacts
+        * As a new cyclist, I want to get to know other cyclists in the area to show me different routes.
+        * As a new cyclist, I want to sign up so that I dont miss any important information.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* Beginner Cyclist
+    * Equipment
+        * As a beginner cyclist, I want to know where I can upgrade my equipment, so that my journeys can be more comfortable.
+        * As a beginner cyclist, I want to know where I can buy spare parts.
+        * As a beginner cyclist, I want to know where the nearest store is, so that I can go buy equipment.
+    * Route
+        * As a beginner cyclist, I want to know what new routes I could take.
+        * As a beginner cyclist, I want to know what level the route is, so I dont over do it.
+    * Contacts
+        * As a beginner cyclist, I want to sign up so I can give details to other new cyclists.
 
-A blue button should appear to click: _Make Public_,
+Wireframes were made for both desktop design and web design. The structure and layout was decided in these wireframes.
+Which can be found here:
+* [Landing Page](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/index.png)
+* [Equipment Page](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/equipment.png)
+* [Route Page](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/route.png)
+* [Sign Up Page](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/signupwire.png)
+* [Mobile design](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/mobile-equip.png)
 
-Another blue button should appear to click: _Open Browser_.
+As you can see, deployed website differs a bit from the wireframes, this is due to planning decisions that where made after the wireframes where completed.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Features
 
-To log into the Heroku toolbelt CLI:
+The Cycling 101 website has a few features to help both attract and encourage the user to continue to use our site. From pictures of amazing landscapes to videos and pictures that help inform new cyclists about everything they need to know. The features have been designed and layout of the user interaction with the site is a simple and enjoyable one. Below the features will be listed.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Landing page:
+* Nav Bar: 
+    * Navigation bar center in the middle of the page, of all 4 pages, allows the user to jump to any page from any page on the site. 
+    * This allows for easy navigation of the website which means the user doesnt have to use the back button on the web browser.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Nav Bar](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/nav-bar.png)
 
-------
+* Landing page image: 
+    * This image is of a man on a bike looking out over a landscape, this shows the user how thrilling and rewarding cycling can be.
+    * On the image there is some cover text with an slogan.
 
-## Release History
+![Landing page image](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/main-image-text.png)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* Lets go Button: 
+    * This button appears on the landing page, under both the website description and the quote about cycling.
+    * It is red to contrast against the site color, when clicked it'll bring the user to the equipment page.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![Button](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/button.png)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+* Social Links in footer: 
+    * In the footer, which is always at the bottom of the page, there are 4 links to social media platforms that Cycling 101 are on. 
+        * Facebook 
+        * Twitter
+        * Youtube
+        * Instagram
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![Social Links](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/social-links.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Equipment Page:
+* Playable video: 
+    * On the equipment page in the same section as the information about the bicycle there is an embedded video from YouTube detailing the types of bikes. This provides the user with information additional to the text section.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![Bike Video](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/bike-vid.png)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+* Clickable buttons to bring you to sites:
+    * On the equipment page there are buttons which will bring you to Wikipedia where the user can find even more information on the subject they have just read about.
+    * I.E more information on each type of bike and information on the items of clothing, helmet plus equipment you will need.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![Buttons](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/equip-buttons.png)
+![Buttons](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/equip-buttons2.png)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* Map to show you shops: 
+    * On the equipment page there is a map section to show you the location of local shops where you can find everything the website talks about.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![Map](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/map.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Route Page:
+* Route selection section: 
+    * Here the user is given information on how to select a route. 
+    * Plus a few hints and tips.
+* Suggested routes: 
+    * There is also an area where a route for each type of bike is suggested: 
+        * Road cycling
+        * Mountain Biking
+        * Hybrid Biking. 
+    * Here there is a map showing the route and a link to the All Trails site where more information about the route can be obtained.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![Routes](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/alltrails-route.png)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Sign Up Page:
+* Sign up page Image: 
+    * A nice image showing four cyclists. 
+        * This reinforces the idea of cycling together to encourage the user to sign up to the website.
+* Sign Up Form: 
+    * The sign up form asks for: 
+        * Users name
+        * Surname
+        * Email address 
+    * This enables the user to sign up to the website to be kept informed about future events etc.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![Sign Up](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/signup.png)
 
-------
+## Testing:
+Testing was done on a continuous basis, as I built and coded each section I would use dev tools on the browser to see if it was working correctly and where to adjust certain values. This meant that once the site was fully built it was stuff that I missed that I would have to go back over. To understand what I missed, I deployed early and sent the link to a few friends. These Identified many issues that I missed. Mainly, images that were not scaled correctly, the embedded video not scaled, text and links that were out of place and the nav bar not displaying correctly on the one line. I then tested on my own devices to confirm what I was being told and began fixing the issues. 
+### Bugs
+The site had two interesting bugs, the nav bar not correctly displaying on mobile devices and the buttons on the route suggestion section were wrapping. I managed to fix the nav bar by putting both the logo and the nav bar into divs and aligning them with flexbox. The button not displaying correctly was also fixed by changing it align with flex box. The image on the equipment page in the clothing section was also giving me trouble. It was appearing too large. A friend of mine ended up helping me, the code he suggested is commented in the CSS file. 
+### Validating
+HTML:
+* HTML code passed through the W3C initailly with a few warnings and errors for each page, issues where fixed and now runs through it with no errors or warnings.
 
-## FAQ about the uptime script
+    * Link to results of Landing page found [here](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fgh0ul5lay3r-91.github.io%2FCycling-101%2Findex.html)
+    * Link to results of Equipment page found [here](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fgh0ul5lay3r-91.github.io%2FCycling-101%2Fequipment.html)
+    * Link to results of Landing page found [here](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fgh0ul5lay3r-91.github.io%2FCycling-101%2Froute.html#l71c298)
+    * Link to results of Landing page found [here](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fgh0ul5lay3r-91.github.io%2FCycling-101%2Fsignup.html#l71c298)
+       
+CSS:
+* CSS code pass through the validator, results can be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgh0ul5lay3r-91.github.io%2FCycling-101%2Fassets%2Fcss%2Fstyles.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
-**Why have you added this script?**
+## Deployment
+* The site was deployed using GitHub pages. Steps are below:
+    * In the Github repository, navigate to the settings tab.
+    * Select pages from the left hand side.
+    * In the source section, select master branch.
+    * GitHub will automatically host the site, and when it is ready and deployed the box around the live link will go green.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+Live link can be found here - https://gh0ul5lay3r-91.github.io/Family-Fun-Quiz/
 
-**How will this affect me?**
+## Credits
+### Content: 
+All content on this site was taken from various different sites which I will list now.
+* Landing Page:
+    * Main image was taken from a royalty free website that offered stock photos of cycling situations.
+    * Social media links were provided by font awesome.
+* Equipment Page:
+    * Content about the bicycle was taken from the Britannica Website
+    * Video on the different bikes was taken from YouTube with credit to the user.
+    * Content in the clothing section was taken from Road.cc
+    * Information on Helmet, Pump and Tools were taken from Wikipedia.
+    * Google maps was used to show where the local shops are in the embedded map.
+* Route Page:
+    * Tips and hints on how to pick a route were taken from the Cycling Weekly Website.
+    * Image on route page taken from a royalty free website with stock images.
+    * All the route suggestions were taken from All Trails.
+* Sign Up page:
+    * Image here taken from a royalty free site.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+## Website Layout
+This website was inspired by the love running project, I loved the styling of that site so I drew a lot from that site on my own. Some of the styling of love running was referenced initially in my site but I then changed it as I went to suit my site. Originally, I was trying to style the website with pure CSS using floating and margins, I was adament I wasnt going to change but in the end I had to use flex box to get the website to display correctly in a format I liked. Slack community member gave me this handy website which I read over to know how to code flexbox - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
