@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function(){
             <!--Button to submit your details-->
             <div>
                 <button class="play-button" type="submit">Enter</button>
-                <button class="play-button" type="reset">Reset</button>
             </div>
     `;
     let formBox = document.getElementById('form-box');//Take form-box from the DOM

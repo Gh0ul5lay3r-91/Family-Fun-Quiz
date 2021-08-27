@@ -50,71 +50,79 @@ var questions = [
         correctAnswer: 'Tatum O Neal'
     },
 ];
-  
-let gameBox = document.getElementById('game-question-box');
-let optionsBox = document.getElementById('game-options-box');
-let questionCountBox = document.getElementById('question-counter');
+
+let gameBoxNode = document.getElementById('game-question-box');
+let optionsBoxNode = document.getElementById('game-options-box');
+let questionCountBoxNode = document.getElementById('question-counter');
+let correctUserScoreNode = document.getElementById('correct-user-score');
+let incorrectUserScoreNode = document.getElementById('incorrect-user-score');
+let highScoreBoxNode = document.getElementById('high-score');
 const userName = localStorage.getItem('name');
-let correctUserScore = document.getElementById('correct-user-score');    let incorrectUserScore = document.getElementById('incorrect-user-score');
-let highScoreBox = document.getElementById('high-score');
 let currentQues = {};
 let gameQuestions = [];
 let questionCount = 0;
 let score = 0;
 let incorrectScore = 0;
-let highScore = localStorage.getItem('highscore');
-let gameInPlay = false;
+let highScore = localStorage.getItem('highScore');
+let gameInProgress = false;
 
 
-document.addEventListener('DOMContentLoaded', function(){
-
-    displayUserScore();
-
+document.addEventListener('DOMContentLoaded', function () {
+    initVariables();
+    updateUI();
     startGame();
 });
+
+
 /* https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button*/
 let resetGame = document.getElementById('reset');
 resetGame.addEventListener('click', restartGame);
-function restartGame(){
-    location.reload();
+
+function restartGame() {
+    initVariables();
+    updateUI();
+    startGame();
 }
 
-function displayUserScore(){
-
-    correctUserScore.innerHTML = `
-    <p class="results">${userName} your score is:<span id="correct">${score}</span></p>
+function updateUI() {
+    correctUserScoreNode.innerHTML = `
+        <p class="results">${userName} Your score is:<span id="correct">${score}</span></p>
     `;
 
-    incorrectUserScore.innerHTML = `
-    <p class="results">Incorrect Answers:<span id="incorrect">${incorrectScore}</span></p>
+    incorrectUserScoreNode.innerHTML = `
+        <p class="results">Incorrect Answers:<span id="incorrect">${incorrectScore}</span></p>
     `;
 
-    questionCountBox.innerText = questionCount;
-    highScoreBox.innerText = highScore;
+    questionCountBoxNode.innerText = questionCount;
+    highScoreBoxNode.innerText = highScore;
 }
 
-function startGame(){
-    gameInPlay = true;
+function initVariables() {
+    gameInProgress = true;
     score = 0;
     incorrectScore = 0;
     questionCount = 0;
     gameQuestions = [...questions];
     gameQuestions.sort( () => .5 - Math.random() );
+}
+
+function startGame() {
     showNextQuestion();
 }
 
-function showNextQuestion(){
+function showNextQuestion() {
     if (questionCount >= gameQuestions.length) {
-        gameInPlay = false;
-        endOfGame(score, incorrectScore);
+        updateUI();
+        gameInProgress = false;
+        gameOver();
     } else {
         questionCount++;
-        questionCountBox.innerText = questionCount;
+        questionCountBoxNode.innerText = questionCount;
         currentQues = gameQuestions[questionCount - 1];
         let questionHtml = `<h3 id="current-question">${currentQues.question}</h3>`;
 
-        gameBox.innerHTML = questionHtml;
-        
+        gameBoxNode.innerHTML = questionHtml;
+
         let optionsHTML = '';
         currentQues.options.forEach((eachOption, idx) => {
             optionsHTML+= `
@@ -125,9 +133,8 @@ function showNextQuestion(){
             `;
         });
 
-        optionsBox.innerHTML = optionsHTML;
-
-        displayUserScore();
+        optionsBoxNode.innerHTML = optionsHTML;
+        updateUI();
     }
 
 
@@ -135,14 +142,13 @@ function showNextQuestion(){
     options.forEach((option) => {
         option.addEventListener('click', function() {
             chosenOption = option.value;
-            console.log(chosenOption);
         });
     });
 
     let answerButton = document.getElementById('answer');
     answerButton.addEventListener('click', function handler(e) {
         e.currentTarget.removeEventListener(e.type, handler);
-        if(gameInPlay === true){
+        if(gameInProgress === true){
             checkAnswer(chosenOption, currentQues.correctAnswer);
         } else{
             alert('Game not in play');
@@ -167,32 +173,34 @@ function incrementIncorrectScore(){
     incorrectScore++;
 }
 
-function endOfGame(correct, incorrect){
+function endOfGame(){
     let passMessage = `
-    <h3 id="pass-game">You have finished the game, Well done your score was ${correct}. You have passed the quiz!</h3>
+    <h3 id="pass-game">You have finished the game, Well done your score was ${score}. You have passed the quiz!</h3>
     `;
     let failMessage = `
-    <h3 id="fail-game">You have finished the game, Hard luck your score was ${incorrect}. You havent passed the quiz</h3>
+    <h3 id="fail-game">You have finished the game, Hard luck your score was ${incorrectScore}. You havent passed the quiz</h3>
     `;
 
-    incorrectUserScore.innerHTML = '';
-    correctUserScore.innerHTML = '';
-    questionCountBox.innerHTML = '';
-    highScoreBox.innerHTML = '';
+    incorrectUserScoreNode.innerHTML = '';
+    correctUserScoreNode.innerHTML = '';
+    questionCountBoxNode.innerHTML = '';
+    highScoreBoxNode.innerHTML = '';
 
-    if(score <= correct){
-        gameBox.innerHTML = passMessage;
-        optionsBox.innerHTML = '';
-        if(score >= highScore){
-            highScore = score;
-            alert('Well done, you got the highscore');
-        } else{
-            alert('Hard Luck, you didnt get the high score');
-        }
+    // Check if user had answered alteast 50% of the questions correctly
+    if(score > (0.5 * gameQuestions.length)){
+        gameBoxNode.innerHTML = passMessage;
+        optionsBoxNode.innerHTML = '';
+
     } else{
-        gameBox.innerHTML = failMessage;
-        optionsBox.innerHTML = '';
+        gameBoxNode.innerHTML = failMessage;
+        optionsBoxNode.innerHTML = '';
     }
 
-    localStorage.setItem('High Score', highScore);
+    if(score >= highScore){
+        highScore = score;
+        localStorage.setItem('highScore', highScore);
+        alert('Well done, you got the highscore');
+    } else{
+        alert('Hard Luck, you didnt get the high score');
+    }
 }
