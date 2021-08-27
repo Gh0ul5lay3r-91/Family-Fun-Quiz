@@ -62,7 +62,7 @@ let currentQues = {};
 let questionCount = 0;
 let score = 0;
 let incorrectScore = 0;
-let highScore = 0;
+let highScore = localStorage.getItem('highscore');
 let gameInPlay = false;
 
 
@@ -121,7 +121,7 @@ function showNextQuestion(){
         let optionsHTML = '';
         currentQues.options.forEach((eachOption, idx) => {
             optionsHTML+= `
-                <li>
+                <li class="option-list">
                     <label for="option${idx}">${eachOption}</label>
                     <input type="radio" name="answer_option" id="option${idx}" value="${eachOption}" class="answer-option"/>
                 </li>
