@@ -35,10 +35,17 @@ Which can be found here:
 As you can see, deployed website differs a bit from the wireframes, this is due to planning decisions that where made after the wireframes where completed.
 
 ## Features
-
+The Family Fun Quiz has a few features that appeal to the user when the first come onto the site. Using both contrasting colors and appealing clickable buttons the site attracts the user to start playing straight away. Utilizing UXD techniques all these features where planned in advanced and tested to make sure they where appealing to the user. Below, features will be listed in detail
 
 
 ### Landing Page:
+* Heading: The heading is top and center of the main box, It Welcomes the user to the Family Fun Quiz.
+![Heading](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/Header.png)
+* Name Input: Using a form, the user can enter their name, this is then validated by JavaScript, and the value taken and stored in local storage.
+![Name Input](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/name.png)
+* Submit Button: This button is below the input for the username, it is colored so the user can identify it easier. Button is also style so that when the user Hovers over it, it goes lighter in color.
+![Submit](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/enter%20button.png)
+
 
 
 
