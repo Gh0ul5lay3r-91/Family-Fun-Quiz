@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Family Fun Quiz is a Javascript web application that is aimed at anyone who wishes to put their knowledge to the test. From families at home to individuals on the train, this quiz is designed to test your knowledge and beat the High Score. Users have to include their name to begin the game, which will be used and displayed beside their current score. Questions and options will be produced on the screen one after the other in a randomised order. The user will then select the correct option or the option they think is correct, until they have answered all the questions. At which point their score will be calculated and shown to them, the high score will also be updated if they happen to beat the highscore.
+Family Fun Quiz is a Javascript web application that is aimed at anyone who wishes to put their knowledge to the test. From families at home to individuals on the train, this quiz is designed to test your knowledge and beat the High Score. Users have to include their name to begin the game, which will be used and displayed beside their current score. Questions and options will be produced on the screen one after the other in a randomised order. The user will then select the correct option or the option they think is correct, until they have answered all the questions. At which point their score will be calculated and shown to them, the high score will also be updated if they happen to beat the highscore. As part of the UXD, its was decided that the target audience would be familys wanting to be kept entertained, people of all ages and individuals wanting a challenge. As part of my research into what features I could implement I interviewed my own family and some friends to see which way they like to play quizs.
 
 Live link can be found here - https://gh0ul5lay3r-91.github.io/Family-Fun-Quiz/
 
@@ -11,47 +11,26 @@ Opportunities were listed out to decide what needed to be done and what could wa
 
 | Opportunity                          | Importance | Viability/Feasability |
 | ------------------------------------ | ---------- | --------------------- | 
-| Information on equipment             | 5          | 5                     | 
-| Information about where to cycle     | 5          | 4                     |
-| Information on how to choose a route | 3          | 5                     |
-| Where to get help                    | 5          | 5                     |
-| Increase Interaction                 | 3          | 4                     | 
-| Photo Gallery                        | 3          | 1                     |
+| Submit Button                        | 5          | 5                     | 
+| Form to provide name                 | 5          | 5                     |
+| Images with Questions                | 2          | 2                     |
+| High Score                           | 4          | 5                     |
+| Leaderboard                          | 2          | 1                     | 
+| Show Correct Answer                  | 3          | 2                     |
 
-It was decided that information on equipment, route and an interaction page were the most important and that a photo gallery would need to wait potentially for an update to the site further down the line. Work then began on User stories and wireframes. 
+With this information it ws decided that Submit button, Form to provide name, High Score and Show Correct Answers where the most important features. The other features can be implemented as updates further down the line if need be. Work then began on user stories and wireframes.
 
-User stories consisted of placing myself in the shoes of a new cyclist and beginner cyclist asking myself what they might what from a website like this.
-* New Cyclist
-    * Equipment
-        * As a new cyclist, I want to know what bike I should go for.
-        * As a new cyclist, I want to know if I should use padded shorts.
-        * As a new cyclist, I want to know which helmet suits best.
-        * As as new cyclist, I want to know what tools to buy.
-    * Route
-        * As a new cyclist, I want to know what routes are popular so that I dont get lost.
-        * As a new cyclist, I want to know what routes to take so I can avoid traffic.
-    * Contacts
-        * As a new cyclist, I want to get to know other cyclists in the area to show me different routes.
-        * As a new cyclist, I want to sign up so that I dont miss any important information.
-
-* Beginner Cyclist
-    * Equipment
-        * As a beginner cyclist, I want to know where I can upgrade my equipment, so that my journeys can be more comfortable.
-        * As a beginner cyclist, I want to know where I can buy spare parts.
-        * As a beginner cyclist, I want to know where the nearest store is, so that I can go buy equipment.
-    * Route
-        * As a beginner cyclist, I want to know what new routes I could take.
-        * As a beginner cyclist, I want to know what level the route is, so I dont over do it.
-    * Contacts
-        * As a beginner cyclist, I want to sign up so I can give details to other new cyclists.
+User stories consisted of placing myself in the shoes of a family member or an individual playing this game and thinking about what they would like to achieve.
+* User
+    * As a User, I want to be able to provide my name to see my score.
+    * As a User, I want to see how many questions I got right and wrong
+    * As a User, I want to know if I beat the highscore.
+    * As a User, Once the game is finished I want to be able to play again.
 
 Wireframes were made for both desktop design and web design. The structure and layout was decided in these wireframes.
 Which can be found here:
 * [Landing Page](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/index.png)
 * [Equipment Page](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/equipment.png)
-* [Route Page](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/route.png)
-* [Sign Up Page](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/signupwire.png)
-* [Mobile design](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/mobile-equip.png)
 
 As you can see, deployed website differs a bit from the wireframes, this is due to planning decisions that where made after the wireframes where completed.
 
