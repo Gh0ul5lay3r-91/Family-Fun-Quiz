@@ -49,6 +49,56 @@ var questions = [
         options: ["Mary Bedham", "Tatum O Neal", "Marlee Matlin", "Anna Paquin"],
         correctAnswer: 'Tatum O Neal'
     },
+    {
+        question: "Which Language is the most sppoken language in the world?",
+        options: ["English", "Spanish", "Mandarin Chinese", "Hindustani"],
+        correctAnswer: 'Mandarin Chinese'
+    },
+    {
+        question: "What is the capital city of Canada?",
+        options: ["Montreal", "Quebec", "Vancouver", "Ottawa"],
+        correctAnswer: 'Ottawa'
+    },
+    {
+        question: "What band member of Blur fronts Gorillaz",
+        options: ["Bono", "Chris Martin", "Damon Albarn", "Alex James"],
+        correctAnswer: 'Damon Albarn'
+    },
+    {
+        question: "How many times has Roger Federer won Wimbledon?",
+        options: ["5", "6", "7", "8"],
+        correctAnswer: '8'
+    },
+    {
+        question: "What year did the USA gain independence from Britain?",
+        options: ["1776", "1886", "1999", "1766"],
+        correctAnswer: '1776'
+    },
+    {
+        question: "What name did the Romans give to Ireland?",
+        options: ["Caledonia", "Hibernia", "Anglia", "Islandia"],
+        correctAnswer: 'Hibernia'
+    },
+    {
+        question: "What is the longest running TV series of all time?",
+        options: ["Fair City", "Home and Away", "Coronation Street", "The Simpsons"],
+        correctAnswer: 'The Simpsons'
+    },
+    {
+        question: "WHat was the first film released by Disney",
+        options: ["Snow White", "Bambi", "The Lion King", "Hercules"],
+        correctAnswer: 'Snow White'
+    },
+    {
+        question: "Which Bronte sister wrote 'Wuthering Heights'",
+        options: ["Charlotte", "Emily", "Jane", "Anne"],
+        correctAnswer: 'Emily'
+    },
+    {
+        question: "What city held the 1936 Olympics",
+        options: ["Berlin", "Munich", "Paris", "Rome"],
+        correctAnswer: 'Berlin'
+    },
 ];
 
 let gameBoxNode = document.getElementById('game-question-box');
