@@ -72,7 +72,9 @@ The Family Fun Quiz has a few features that appeal to the user when the first co
 
 ![Option Display](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/option%20display.png)
 
-* 
+* Question Counter Display: In the bottom left corner of the display area, there is a counter which shows the user the number of the current question they are on.
+
+![Question Counter]()
 * 
 * 
 * 
