@@ -1,5 +1,5 @@
-![Cycling 101 Logo](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/logo.png)
-![Cycling 101 Devices](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/readme-images/site-example1.png)
+![Family Fun Quiz Logo](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/Logo.png)
+![Family Fun Quiz Devices](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/Main%20image.png)
 
 ## Introduction
 
