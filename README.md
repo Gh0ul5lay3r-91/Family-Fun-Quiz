@@ -40,23 +40,39 @@ The Family Fun Quiz has a few features that appeal to the user when the first co
 
 ### Landing Page:
 * Heading: The heading is top and center of the main box, It Welcomes the user to the Family Fun Quiz.
+
 ![Heading](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/Header.png)
+
 * Name Input: Using a form, the user can enter their name, this is then validated by JavaScript, and the value taken and stored in local storage.
+
 ![Name Input](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/name.png)
+
 * Submit Button: This button is below the input for the username, it is colored so the user can identify it easier. Button is also style so that when the user Hovers over it, it goes lighter in color.
+
 ![Submit](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/enter%20button.png)
+
 * Welcome Message: When the user clicks enter, JavaScript clears the box and displays a welcome message to the user, and the button changes to a lets go button.
+
 ![Welcome](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/Welcome%20message.png)
 
 ### Quiz Page:
 * Users Correct Score: In the top left corner the users current game score is displayed, the users name is taken from local storage and is displayed to the user, the score is also green to signify it is the score for correct answers.
+
 ![Correct Score](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/correct%20score.png)
+
 * User Incorrect Score: As with the correct score display, the incorrect score is displayed in red to signify it is the score from incorrect answers.
+
 ![Incorrect Score](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/incorrect%20answer.png)
+
 * Question Display: Centrally located here the randomly chosen question is displayed to the user. It is done through JavaScript and changes for each new question.
-![Question Display](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/Question%20display.png)
+
+![Question Display](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/Question%20display.
+png)
+
 * Option Display: As with the question display, this display the options associated with the question that is being displayed. An event listener is add to each option so when the user clicks on Answer the value can be checked against the correct answer.
+
 ![Option Display](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/option%20display.png)
+
 * 
 * 
 * 
