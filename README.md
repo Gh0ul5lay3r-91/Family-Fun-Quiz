@@ -139,22 +139,22 @@ Live link can be found here - https://gh0ul5lay3r-91.github.io/Family-Fun-Quiz/
 
 ## Credits
 ### Content: 
-All content on this site was taken from various different sites which I will list now.
-* Landing Page:
-    * Main image was taken from a royalty free website that offered stock photos of cycling situations.
-    * Social media links were provided by font awesome.
-* Equipment Page:
-    * Content about the bicycle was taken from the Britannica Website
-    * Video on the different bikes was taken from YouTube with credit to the user.
-    * Content in the clothing section was taken from Road.cc
-    * Information on Helmet, Pump and Tools were taken from Wikipedia.
-    * Google maps was used to show where the local shops are in the embedded map.
-* Route Page:
-    * Tips and hints on how to pick a route were taken from the Cycling Weekly Website.
-    * Image on route page taken from a royalty free website with stock images.
-    * All the route suggestions were taken from All Trails.
-* Sign Up page:
-    * Image here taken from a royalty free site.
+The questions used in this website came from two quizs that my family wrote during lockdown for the week family zoom quiz. 
+* Font used
+    * Lato
+        * For Paragraphs and normal text.
+    * Orbitron
+        * For all headings.
+Both fonts where take from Google Fonts.
+
+Alot of research I done to solve issues in my JavaScript code was on both YouTube and Stack overflow. Below are credits to some of the issues I faced and the links to the sites used as reference.
+* Passing a variable from one script to another with Local Storage [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+* Building questions and answers at random [here](https://stackoverflow.com/questions/43847375/creating-random-questions-and-answers-javascript)
+* Over all quiz app functionality and logic
+    * [here](https://www.sitepoint.com/simple-javascript-quiz/)
+    * [here](https://www.youtube.com/watch?v=DFhmNLKwwGw)
+
+I also wish to give credit to both Tutoring for guiding me to write functioning JavaScript code to get what I wanted to do to work, and my mentor also, who help me identify why some bugs where happening and how to isolate them.
 
 ## Website Layout
 This website was inspired by the love running project, I loved the styling of that site so I drew a lot from that site on my own. Some of the styling of love running was referenced initially in my site but I then changed it as I went to suit my site. Originally, I was trying to style the website with pure CSS using floating and margins, I was adament I wasnt going to change but in the end I had to use flex box to get the website to display correctly in a format I liked. Slack community member gave me this handy website which I read over to know how to code flexbox - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
