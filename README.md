@@ -74,11 +74,16 @@ The Family Fun Quiz has a few features that appeal to the user when the first co
 
 * Question Counter Display: In the bottom left corner of the display area, there is a counter which shows the user the number of the current question they are on.
 
-![Question Counter]()
-* 
-* 
-* 
+![Question Counter](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/question%20count.png)
 
+* High Score display: In the bottom right hand corner the high score is displayed. When the game is played first the high score is set to zero, but once the game iterate once the high score is set, there after, any score that is greater than the high score.
+
+![High Score](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/high%20score.png)
+
+* End of Game Message: Once the user has answered all the questions the game will display a message telling the user weather they passed or not, this is based off the user correctly answer more than 60% of the questions. 
+
+![Pass Message](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/Pass%20message.png)
+![Fail Message](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/Fail%20message.png)
 
 ## Testing:
 Testing was done on a continuous basis, its something that I am comfortable with whilst coding, as I wrote the code for each part of the site I would test in using chrome dev tools, then on safari, edge and mozilla. Once the site got to a reasonably functioning state, I deployed as early as I could and I released the link for friends and family to test it. With their feedback, I chaged most of the UI and fixed a few bugs I had missed. Anytime I was made a ware of a bug I replicated it myself on my devices and proceeded to change.
