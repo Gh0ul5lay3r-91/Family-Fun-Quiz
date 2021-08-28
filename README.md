@@ -66,8 +66,7 @@ The Family Fun Quiz has a few features that appeal to the user when the first co
 
 * Question Display: Centrally located here the randomly chosen question is displayed to the user. It is done through JavaScript and changes for each new question.
 
-![QuestionDisplay](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/Question%20display.
-png)
+![Question Display](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/Question%20display.png)
 
 * Option Display: As with the question display, this display the options associated with the question that is being displayed. An event listener is add to each option so when the user clicks on Answer the value can be checked against the correct answer.
 
