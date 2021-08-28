@@ -120,7 +120,7 @@ function showNextQuestion() {
         questionCount++;
         //questionCountBoxNode.innerText = questionCount;
         currentQues = gameQuestions[questionCount - 1];
-        let questionHtml = `<h3 id="current-question">${questionCount}:${currentQues.question}</h3>`;
+        let questionHtml = `<h3 id="current-question">${questionCount}: ${currentQues.question}</h3>`;
 
         gameBoxNode.innerHTML = questionHtml;
 
@@ -179,7 +179,7 @@ function gameOver(){
     <h3 id="pass-game">You have finished the game, Well done your score was ${score}. You have passed the quiz!</h3>
     `;
     let failMessage = `
-    <h3 id="fail-game">You have finished the game, Hard luck your score was ${incorrectScore}. You havent passed the quiz</h3>
+    <h3 id="fail-game">You have finished the game, Hard luck you answered ${incorrectScore} questions incorrectly. You havent passed the quiz</h3>
     `;
     let highScoreMessage = `
     <p>Well done, you got the high score</p>
