@@ -84,6 +84,11 @@ label{
     color: #ffffff;
 }
 
+.play-button:active{
+    background-color: #ffffff;
+    color: #ff0000;
+}
+
 /*Styles for spans containing incorrect and correct scores on the quiz page*/
 #result-box{
     width: 96%;
