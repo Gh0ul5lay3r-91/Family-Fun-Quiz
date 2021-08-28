@@ -122,7 +122,11 @@ HTML:
     * Link to results of Quiz page found [here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgh0ul5lay3r-91.github.io%2FFamily-Fun-Quiz%2Fquiz.html)
        
 CSS:
-* CSS code pass through the validator, results can be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgh0ul5lay3r-91.github.io%2FCycling-101%2Fassets%2Fcss%2Fstyles.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* CSS code pass through the validator, results can be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgh0ul5lay3r-91.github.io%2FFamily-Fun-Quiz%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+JavaScript:
+* JavaScript file for index page can be found [here]()
+* JavaScript file for quiz page can be found [here]()
 
 ## Deployment
 * The site was deployed using GitHub pages. Steps are below:
