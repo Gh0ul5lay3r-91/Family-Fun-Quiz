@@ -17,7 +17,6 @@ body{
 h1, h2{
     font-family: Orbitron, 'sans-serif';
     text-transform: uppercase;
-    font-weight: 50px;
     letter-spacing: 1px;
     color: #202020
 }
