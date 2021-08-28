@@ -6,7 +6,7 @@
     padding : 0;
     border: none;
 }
-
+/* Body font size and font family*/
 body{
     font-size: 16px;
     background-color: #d3f3e378;
@@ -23,6 +23,8 @@ h1, h2{
 
 
 /*Main web page structure*/
+
+/*This is the main box of the site, uses to display all functionality*/
 .main-box{
     text-align: center;
     width: 50%;
@@ -36,10 +38,12 @@ h1, h2{
     padding: 10px;
 }
 
+/*Color class of the main box */
 .main-box-color{
     background-color: #ffffff;
 }
 
+/*This styles the form when it is displayed by JavaScript*/
 #form-box{
     text-align: center;
     height: 40%;
@@ -57,19 +61,18 @@ h1, h2{
     border-radius: 5px;
 }
 
+/* Spacing styles for the form*/
 #name-form div{
     margin-top: 1%;
     margin-bottom: 1%;
 }
 
+/* Spacing for label */
 label{
     padding-left: 5px;
 }
 
-.label-div{
-    text-align: left;
-}
-
+/*Styling for Buttons that appear across website*/
 .play-button{
     text-decoration: none;
     background-color: #ff0000;
@@ -79,6 +82,7 @@ label{
     padding: 10px;
 }
 
+/*Styles for when user hovers and clicks the button */
 .play-button:hover{
     background-color: #ff6464;
     color: #ffffff;
@@ -101,6 +105,7 @@ label{
     padding: 5px;
 }
 
+/* Styling for the box that contains the question and the options */
 #game-box{
     text-align: center;
     height: 40%;
@@ -108,11 +113,13 @@ label{
     flex-grow: 2;
 }
 
+/*Styling for the boxs that contains the question*/
 #game-question-box{
     margin-bottom: 1%;
     padding: 10px;
 }
 
+/* Styling for the box that contains the options */
 #game-options-box{
     text-align: left;
     padding: 10px;
@@ -126,16 +133,14 @@ label{
     margin-bottom: 2%;
 }
 
-#result-box p{
-    padding: 5px;
-}
-
+/*Styling for the container holding the button */
 #submit-box{
     width: 100%;
     flex-grow: 3;
     padding: 10px;
 }
 
+/*Styling for the box that contains the count */
 #counter-box{
     width: 100%;
     flex-grow: 4;

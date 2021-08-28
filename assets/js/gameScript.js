@@ -253,8 +253,8 @@ function gameOver(){
         startGame();
     }
 
-    // Check if user had answered alteast 50% of the questions correctly
-    if(score > (0.5 * gameQuestions.length)){
+    // Check if user had answered alteast 60% of the questions correctly
+    if(score > (0.6 * gameQuestions.length)){
         gameBoxNode.innerHTML = passMessage;
         optionsBoxNode.innerHTML = '';
 
