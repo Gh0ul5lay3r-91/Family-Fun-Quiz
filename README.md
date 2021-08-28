@@ -30,7 +30,7 @@ User stories consisted of placing myself in the shoes of a family member or an i
 Wireframes were made for both desktop design and web design. The structure and layout was decided in these wireframes.
 Which can be found here:
 * [Landing Page](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/index.png)
-* [Equipment Page](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/equipment.png)
+* [Game Page](https://github.com/Gh0ul5lay3r-91/Cycling-101/blob/master/assets/wireframe-images/equipment.png)
 
 As you can see, deployed website differs a bit from the wireframes, this is due to planning decisions that where made after the wireframes where completed.
 
