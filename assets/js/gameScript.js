@@ -259,16 +259,20 @@ function incrementIncorrectScore(){
  * it displays a message to the user based on their score, the function also displays a restart button so the user can restart the game
  */
 function gameOver(){
+    //This message can dynamically display the score the user got, when it is displayed if they get more than 60% correct
     let passMessage = `
     <h3 id="pass-game">You have finished the game, Well done your score was ${score}. You have passed the quiz!</h3>
     `;
+    //This Message can dynamically display the incorrect score, if the user gets less than 60% correct
     let failMessage = `
     <h3 id="fail-game">You have finished the game, Hard luck you answered ${incorrectScore} questions incorrectly. You havent passed the quiz</h3>
     `;
+    //This is displayed if the users gets the high score, again dynamic
     let highScoreMessage = `
     <p>Well done, you got the high score</p>
     <p>The high score is:<span id="high-score">${highScore}</span></p>
     `;
+    //This is the reset button
     let resetButton = `
     <button class="play-button" id="reset" type="reset">Restart</button>
     `;
@@ -285,6 +289,8 @@ function gameOver(){
     let resetGame = document.getElementById('reset');
     resetGame.addEventListener('click', restartGame);
 
+    /** This function calls the various functions that initialise the game, in essence resetting the game,
+     *  so the user can play again */
     function restartGame() {
         initVariables();
         updateUI();
