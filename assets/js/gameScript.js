@@ -111,14 +111,14 @@ let correctUserScoreNode = document.getElementById('correct-user-score');
 let incorrectUserScoreNode = document.getElementById('incorrect-user-score');
 let submitBoxNode = document.getElementById('submit-box');
 let highScoreBoxNode = document.getElementById('high-score');
-const userName = localStorage.getItem('name');
-let currentQues = {};
-let gameQuestions = [];
+const userName = localStorage.getItem('name');//Takes the user name from local storage that was set in the index page script
+let currentQues = {};//This is set as an empty object so that the question that was randomly chosen can be assigned to it
+let gameQuestions = [];//This is set as an empty array to pick a questio nrandomly
 let questionCount = 0;
 let score = 0;
 let incorrectScore = 0;
-let highScore = localStorage.getItem('highScore');
-let gameInProgress = false;
+let highScore = localStorage.getItem('highScore');//Get the high score from local storage 
+let gameInProgress = false;//Sets the logic initially to false
 
 /**This event listener listens for the DOM to lond, once it does it calls the function to initialise variables
  * the function that updates the UI that is displayed to the user and the start game function
@@ -206,11 +206,11 @@ function showNextQuestion() {
             `;
         });
 
-        optionsBoxNode.innerHTML = optionsHTML;
+        optionsBoxNode.innerHTML = optionsHTML;//Sets the option to the options box
         updateUI();
     }
 
-
+    //THis adds an event listener to each option, that grabs the value of the option the user selected
     let options = Array.from(document.getElementsByClassName('answer-option'));
     options.forEach((option) => {
         option.addEventListener('click', function() {
@@ -218,17 +218,24 @@ function showNextQuestion() {
         });
     });
 
+    //This adds an event listener to the answer button, so that when the user clicks it, the check answer function is called
     let answerButton = document.getElementById('answer');
     answerButton.addEventListener('click', function handler(e) {
+        //This removes the "data" from the event handler, this was to stop a bug where the game was answering double the amount when the user clicked answer
         e.currentTarget.removeEventListener(e.type, handler);
+        //This is the logic to stop the user clikcing answer once the game has ended
         if(gameInProgress === true){
-            checkAnswer(chosenOption, currentQues.correctAnswer);
+            checkAnswer(chosenOption, currentQues.correctAnswer);//This sends the users chosen option and the correct answer of the question to the checkAnswer function
         } else{
             alert('Game not in play');
         }
     });
 }
 
+/** This function takes the option that was choosen by the user and the correct answer of the current question and compares them.
+ * If they are the same then the incrementCorrectScore is called, if not then incrementIncorrectScore is called, showNextQuestion
+ * is then called to loop the game back to the next question
+ */
 function checkAnswer(option, answer){
     if(option === answer){
         incrementCorrectScore();
@@ -238,14 +245,19 @@ function checkAnswer(option, answer){
     showNextQuestion();
 }
 
+/** This function increments the correct score */
 function incrementCorrectScore(){
     score++;
 }
 
+/** This function increments the incorrect score */
 function incrementIncorrectScore(){
     incorrectScore++;
 }
 
+/** This Function is called when the question count reachs the same length as the question array, Using template literals 
+ * it displays a message to the user based on their score, the function also displays a restart button so the user can restart the game
+ */
 function gameOver(){
     let passMessage = `
     <h3 id="pass-game">You have finished the game, Well done your score was ${score}. You have passed the quiz!</h3>
@@ -261,11 +273,15 @@ function gameOver(){
     <button class="play-button" id="reset" type="reset">Restart</button>
     `;
 
+    //This clears the display of the scores
     incorrectUserScoreNode.innerHTML = '';
     correctUserScoreNode.innerHTML = '';
-    submitBoxNode.innerHTML = resetButton;
+    submitBoxNode.innerHTML = resetButton;//Displays the reset button
 
-    /* https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button*/
+    /*This reset took me a bit of time, I got it half working, but the scores where not resetting
+    I had to build the updateUI function to get it to work correctly,
+    Credit to my mentor for suggesting this link
+    https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button*/
     let resetGame = document.getElementById('reset');
     resetGame.addEventListener('click', restartGame);
 
@@ -277,17 +293,18 @@ function gameOver(){
 
     // Check if user had answered alteast 60% of the questions correctly
     if(score > (0.6 * gameQuestions.length)){
-        gameBoxNode.innerHTML = passMessage;
+        gameBoxNode.innerHTML = passMessage;//This message is displayed if the user gets more than 60% of the questions correct
         optionsBoxNode.innerHTML = '';
 
     } else{
-        gameBoxNode.innerHTML = failMessage;
+        gameBoxNode.innerHTML = failMessage;//This message is displayed if the user does get 60% of the answers correct
         optionsBoxNode.innerHTML = '';
     }
-
+    
+    //This sets the high score if the users score is greater than or equal to the highscore
     if(score >= highScore){
         highScore = score;
         localStorage.setItem('highScore', highScore);
-        counterBoxNode.innerHTML = highScoreMessage;
+        counterBoxNode.innerHTML = highScoreMessage;// Sets the message that is displayed to the user
     }
 }
