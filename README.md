@@ -100,8 +100,8 @@ CSS:
 * CSS code passes through the validator, results can be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgh0ul5lay3r-91.github.io%2FFamily-Fun-Quiz%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 JavaScript:
-* JavaScript file for index page can be found [here]()
-* JavaScript file for quiz page can be found [here]()
+* JavaScript file for index page can be found [here](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/script%20jshint.png)
+* JavaScript file for quiz page can be found [here](https://github.com/Gh0ul5lay3r-91/Family-Fun-Quiz/blob/main/assets/readme-images/gameScrip%20jshint.png)
 
 ## Deployment
 * The site was deployed using GitHub pages. Steps are below:
