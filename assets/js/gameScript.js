@@ -1,9 +1,9 @@
 //THis is the Data Structure that holds all the questions for the game, approx 20 of them in total
 var questions = [
     {
-        question: "What is the capital of Ireland?",
-        options: ["Waterford", "Wexford", "Cork", "Dublin"],
-        correctAnswer: 'Dublin'
+        question: "What is the capital of Ireland?",//Object holds the question key and string 
+        options: ["Waterford", "Wexford", "Cork", "Dublin"],//Answer key and array
+        correctAnswer: 'Dublin'//Correct answer key and string
     },
     {
         question: "In what year did Ireland begin to use euro as its currency?",
@@ -102,7 +102,8 @@ var questions = [
     },
 ];
 
-let gameBoxNode = document.getElementById('game-question-box');
+//Here I declare all the variables I will use throughout the JS file
+let gameQuestionBoxNode = document.getElementById('game-question-box');
 let optionsBoxNode = document.getElementById('game-options-box');
 let questionCountBoxNode = document.getElementById('question-counter');
 let counterBoxNode = document.getElementById('counter-box');
@@ -119,26 +120,35 @@ let incorrectScore = 0;
 let highScore = localStorage.getItem('highScore');
 let gameInProgress = false;
 
-
+/**This event listener listens for the DOM to lond, once it does it calls the function to initialise variables
+ * the function that updates the UI that is displayed to the user and the start game function
+ */
 document.addEventListener('DOMContentLoaded', function () {
     initVariables();
     updateUI();
     startGame();
 });
 
+/** This function updates the UI that is displayed to the user, using template literals so that it can
+ * be dynamic.
+ */
 function updateUI() {
+    //Users correct score, displayed to them with their name
     correctUserScoreNode.innerHTML = `
         <p class="results">${userName} Your score is: <span id="correct">${score}</span></p>
     `;
 
+    //The amount of questions the user has got wrong is set here, and displayed to them
     incorrectUserScoreNode.innerHTML = `
         <p class="results">Incorrect Answers: <span id="incorrect">${incorrectScore}</span></p>
     `;
 
+    //This displays the button that the user has to click to submit their answer
     submitBoxNode.innerHTML = `
         <button class="play-button" id="answer" type="submit">Answer</button>
     `;
 
+    //This displays both the Question nukber the user is currently on and the high score
     counterBoxNode.innerHTML = `
         <div class="styling-box">
             <p>Question Number: <span id="question-counter">${questionCount}</span></p><!--This span is targeted by JS to display the question number-->
@@ -149,33 +159,44 @@ function updateUI() {
     `;
 }
 
+/** This function sets all the variables to the condition they should be in to start the game, this function should be called
+ * before the game either begins or restarts
+ */
 function initVariables() {
-    gameInProgress = true;
-    score = 0;
-    incorrectScore = 0;
-    questionCount = 0;
-    gameQuestions = [...questions];
-    gameQuestions.sort( () => .5 - Math.random() );
+    gameInProgress = true;//This is logic that also the game to check the users answer once the user clicks answer, stops the user clicking answer if the game is finished
+    score = 0;// Sets score to zero
+    incorrectScore = 0;//Sets Incorrect score to zero
+    questionCount = 0;//Sets question count to zero
+    gameQuestions = [...questions];//This copys the questions array to a new array so that we can start to set the questions randomly
+    gameQuestions.sort( () => .5 - Math.random() );//This sorts the array in a random order
 }
 
+/** This function basically just calls the showNextQuestion function */
 function startGame() {
     showNextQuestion();
 }
 
+/** This function displays the current question to the user using template literals, before the questions is printed, it checks to see
+ * if the question count is less than the amount of questions, if so it displays the question and options, if not the gameOver 
+ * is called. This function also sends the users selected option to be checked when the submit button is clicked. Alot of time.
+ * was spent building this function, I used this site as reference https://stackoverflow.com/questions/43847375/creating-random-questions-and-answers-javascript
+ * along with some help from my mentor and tutoring.
+ */
 function showNextQuestion() {
     if (questionCount >= gameQuestions.length) {
         updateUI();
-        gameInProgress = false;
-        gameOver();
+        gameInProgress = false;// Sets the logic to false so the user cannot click the answer button
+        gameOver();//Calls game over function
     } else {
-        questionCount++;
-        //questionCountBoxNode.innerText = questionCount;
-        currentQues = gameQuestions[questionCount - 1];
-        let questionHtml = `<h3 id="current-question">${questionCount}: ${currentQues.question}</h3>`;
+        questionCount++;//On every iteration the question count goes up
+        currentQues = gameQuestions[questionCount - 1];//This sets the current question to the randomly assinged question
+        let questionHtml = `<h3 id="current-question">${questionCount}: ${currentQues.question}</h3>`;//Template Literal to display the question
 
-        gameBoxNode.innerHTML = questionHtml;
+        gameQuestionBoxNode.innerHTML = questionHtml;//Sets the template literal to the the question box
 
-        let optionsHTML = '';
+        //This sets the options to be displayed to the user, credit to my mentor for helping me stream line this one
+        let optionsHTML = '';//Sets Options to blank
+        //The using a loop sets the option that is part of the question object, loops through to set all 4 options
         currentQues.options.forEach((eachOption, idx) => {
             optionsHTML+= `
                 <li class="option-list">

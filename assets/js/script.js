@@ -1,4 +1,4 @@
-/* This function attached to the event listener provides the HTML through
+/** This function attached to the event listener provides the HTML through
     A template literal. It displays a form input option asking the user
     for their Name. */
 document.addEventListener("DOMContentLoaded", function(){
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     let formNode = document.getElementById('name-form');
     formNode.addEventListener('submit', formCheck);
-/* This function checks the form to see if the value of the inout box is either not null or not an empty string,
+/** This function checks the form to see if the value of the inout box is either not null or not an empty string,
     if either of these are true then the function displays an alert. */
     function formCheck(event){
         event.preventDefault();//Prevent the default submit of the form
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 })
-/* This function gets the name that the user enters and displays it back to them welcoming them to the game,
+/**  This function gets the name that the user enters and displays it back to them welcoming them to the game,
 It the sets the name to local storage so the gameScript can use it. */
 function playGame(){
     let userName = document.getElementById('name').value;
