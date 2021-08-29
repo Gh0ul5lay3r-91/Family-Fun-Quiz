@@ -124,8 +124,10 @@ The questions used in this website came from two quizzes that my family wrote du
 Both fonts where taken from Google Fonts.
 
 A lot of research I did to solve issues in my JavaScript code was on both YouTube and Stack overflow. Below are credits to some of the issues I faced and the links to the sites used as reference.
-* Passing a variable from one script to another with Local Storage [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-* Building questions and answers at random [here](https://stackoverflow.com/questions/43847375/creating-random-questions-and-answers-javascript)
+* Passing a variable from one script to another with Local Storage 
+    * [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+* Building questions and answers at random 
+    * [here](https://stackoverflow.com/questions/43847375/creating-random-questions-and-answers-javascript)
 * Over all quiz app functionality and logic
     * [here](https://www.sitepoint.com/simple-javascript-quiz/)
     * [here](https://www.youtube.com/watch?v=DFhmNLKwwGw)
