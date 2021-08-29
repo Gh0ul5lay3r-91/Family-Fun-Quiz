@@ -105,14 +105,13 @@ var questions = [
 //Here I declare all the variables I will use throughout the JS file
 let gameQuestionBoxNode = document.getElementById('game-question-box');
 let optionsBoxNode = document.getElementById('game-options-box');
-let questionCountBoxNode = document.getElementById('question-counter');
 let counterBoxNode = document.getElementById('counter-box');
 let correctUserScoreNode = document.getElementById('correct-user-score');
 let incorrectUserScoreNode = document.getElementById('incorrect-user-score');
 let submitBoxNode = document.getElementById('submit-box');
-let highScoreBoxNode = document.getElementById('high-score');
 const userName = localStorage.getItem('name');//Takes the user name from local storage that was set in the index page script
 let currentQues = {};//This is set as an empty object so that the question that was randomly chosen can be assigned to it
+let chosenOption = '';//Set empty to equal the users chosen option
 let gameQuestions = [];//This is set as an empty array to pick a questio nrandomly
 let questionCount = 0;
 let score = 0;
@@ -299,11 +298,11 @@ function gameOver(){
 
     // Check if user had answered alteast 60% of the questions correctly
     if(score > (0.6 * gameQuestions.length)){
-        gameBoxNode.innerHTML = passMessage;//This message is displayed if the user gets more than 60% of the questions correct
+        gameQuestionBoxNode.innerHTML = passMessage;//This message is displayed if the user gets more than 60% of the questions correct
         optionsBoxNode.innerHTML = '';
 
     } else{
-        gameBoxNode.innerHTML = failMessage;//This message is displayed if the user does get 60% of the answers correct
+        gameQuestionBoxNode.innerHTML = failMessage;//This message is displayed if the user does get 60% of the answers correct
         optionsBoxNode.innerHTML = '';
     }
     

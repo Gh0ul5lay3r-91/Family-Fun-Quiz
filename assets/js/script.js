@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function(){
             playGame();//Calls play game function
         }
     }
-})
+});
 /**  This function gets the name that the user enters and displays it back to them welcoming them to the game,
  * It the sets the name to local storage so the gameScript can use it. */
 function playGame(){
