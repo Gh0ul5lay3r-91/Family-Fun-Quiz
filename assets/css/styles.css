@@ -149,6 +149,7 @@ label{
     padding: 10px;
 }
 
+/* Styling for the correct and incorrect spans */
 #correct{
     color: #09ff00
 }
@@ -158,6 +159,7 @@ label{
 }
 
 /* Media Queries */
+/* For any screen less than 1000px */
 @media screen and (max-width: 1000px){
     h1,h2,p{
         font-size: 17px;
