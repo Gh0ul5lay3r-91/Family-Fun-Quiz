@@ -1,3 +1,4 @@
+//THis is the Data Structure that holds all the questions for the game, approx 20 of them in total
 var questions = [
     {
         question: "What is the capital of Ireland?",

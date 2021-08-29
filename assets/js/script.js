@@ -15,21 +15,21 @@ document.addEventListener("DOMContentLoaded", function(){
                 <button class="play-button" type="submit">Enter</button>
             </div>
     `;
-    let formBox = document.getElementById('form-box');//Take form-box from the DOM
+    let formBoxNode = document.getElementById('form-box');//Take form-box from the DOM
 
-    formBox.innerHTML = html;//Put the HTML into the DOM
+    formBoxNode.innerHTML = html;//Put the HTML into the DOM
 
-    let form = document.getElementById('name-form');
-    form.addEventListener('submit', formCheck);
+    let formNode = document.getElementById('name-form');
+    formNode.addEventListener('submit', formCheck);
 /* This function checks the form to see if the value of the inout box is either not null or not an empty string,
     if either of these are true then the function displays an alert. */
     function formCheck(event){
         event.preventDefault();//Prevent the default submit of the form
-        const name = form.elements['name'].value;
+        const name = form.elements['name'].value;// If the name is empty, tells the user to enter a name
         if(name === null || name === ""){
             alert("Please enter your name");
         }else{
-            playGame();
+            playGame();//Calls play game function
         }
     }
 })
@@ -43,7 +43,7 @@ function playGame(){
     <a href="quiz.html"><button class="play-button" type="submit">Lets Go!</button></a>
     `;
     
-    welcomeBoxNode.innerHTML = welcomeMessage;
+    welcomeBoxNode.innerHTML = welcomeMessage;//Set the welcome message displayed to the user
 
-    localStorage.setItem('name', userName);
+    localStorage.setItem('name', userName);//Sets the user name to local storage
 }
