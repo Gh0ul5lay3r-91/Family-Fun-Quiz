@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
         <form id="name-form">
             <div>
                 <label for="name">Full Name:</label>
-                <input type="text" name="full_name" id="name" class="form-input">
+                <input type="text" name="full_name" id="name" class="form-input" autofocus>
             </div>
             <!--Button to submit your details-->
             <div>
@@ -19,13 +19,19 @@ document.addEventListener("DOMContentLoaded", function(){
 
     formBoxNode.innerHTML = html;//Put the HTML into the DOM
 
+    //This listens for both a click or enter key and calls the formCheck function
     let formNode = document.getElementById('name-form');
     formNode.addEventListener('submit', formCheck);
+    formNode.addEventListener("keydown", function(event){
+        if(event === "Enter"){
+            formCheck();
+        }
+    });
 /** This function checks the form to see if the value of the inout box is either not null or not an empty string,
  * if either of these are true then the function displays an alert. */
     function formCheck(event){
         event.preventDefault();//Prevent the default submit of the form
-        const name = form.elements['name'].value;// If the name is empty, tells the user to enter a name
+        const name = formNode.elements['name'].value;// If the name is empty, tells the user to enter a name
         if(name === null || name === ""){
             alert("Please enter your name");
         }else{
